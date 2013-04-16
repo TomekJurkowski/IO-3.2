@@ -7,13 +7,16 @@ ITERACJE:
   - zarządzanie użytkownikami - podstawowe
   - bilans otwarcia
   - księgowanie faktur
+  - księga przychodów i rozchodów
 2. Iteracja - 27 maj / 3 czerwiec 2013:
   - skalowalność
   - ewidencja VAT
+  - rozliczenie VAT7 i PIT36L
   - e-deklaracje
+  - rozliczenie ZUS (idg)
 3. Iteracja - 26 czerwiec 2013:
   - pełna księgowość - integracja z kontem bankowym
-  - rozliczenia ZUS
+  - rozliczenia ZUS (pracownicy)
   - informacje o pracownikach
 4. Iteracja - 16 lipiec 2013:
   - zarządzanie użytkownikami - rozwinięcie
@@ -42,6 +45,10 @@ ITERACJE:
       * podstawowy formularz pozwalający zaksięgować fakturę
       - TOMEK JURKOWSKI
       ~ termin ukończenia: 9 maj, poprawki do 13 maja
+  - księga przychodów i rozchodów:
+      * stworzenie księgi przychodów i rozchodów
+      - PIOTREK OSTROWSKI
+      ~ termin ukończenia: 9 maj, poprawki do 13 maja
 
 2. Iteracja - szczegółowo:
   - skalowalność:
@@ -52,7 +59,16 @@ ITERACJE:
       * formularz do wypełnienia ewidencji VAT
       - KUBA KUSZNERUK
       ~ termin ukończenia: 27 maj, poprawki do 3 czerwca
-  - e-deklaracje:
-      * wypełnienie formularzy VAT7 i PIT36
+  - rozliczenie VAT7 i PIT36L:
+      * formularz do wypełnienia rozliczenia VAT7
+      * formularz do wypełnienia rozliczenia PIT36L
       - TOMEK JURKOWSKI
+      ~ termin ukończenia: 27 maj, poprawki do 3 czerwca
+  - e-deklaracje:
+      * wypełnienie formularzy VAT7 i PIT36L
+      - TOMEK JURKOWSKI
+      ~ termin ukończenia: 27 maj, poprawki do 3 czerwca
+  - rozliczenie ZUS (idg):
+      * formularz dorozliczenia ZUS - indywidualna działalność gospodarcza
+      - KUBA KUSZNERUK
       ~ termin ukończenia: 27 maj, poprawki do 3 czerwca
