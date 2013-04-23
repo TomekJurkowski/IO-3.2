@@ -2,7 +2,7 @@ HARMONOGRAM
 
 ITERACJE:
 
-1. Iteracja - 13 maj 2013:
+1. Iteracja - 6 maj / 10 maj 2013:
   - podstawowy CMS
   - zarządzanie użytkownikami - podstawowe
   - bilans otwarcia
@@ -31,24 +31,24 @@ ITERACJE:
       * podstawowe menu opcji
       * opcja logowania
       - KUBA KUSZNERUK
-      ~ termin ukończenia: 10 maj, poprawki do 13 maja
+      ~ termin ukończenia: 30 kwietnia, poprawki do 6 maja
   - podstawowe zarządzanie użytkownikami:
       * dodanie/usuwanie nowego konta
       * nadanie uprawnień księgowej
       - PIOTREK OSTROWSKI
-      ~ termin ukończenia: 9 maj, poprawki do 13 maja
+      ~ termin ukończenia: 6 maj, poprawki do 10 maja
   - bilans otwarcia:
       * umożliwienie wprowadzenia do naszej webowej księgowości bilansu otwarcia
       - TOMEK JURKOWSKI
-      ~ termin ukończenia: 9 maj, poprawki do 13 maja
+      ~ termin ukończenia: 6 maj, poprawki do 10 maja
   - księgowanie faktury:
       * podstawowy formularz pozwalający zaksięgować fakturę
       - TOMEK JURKOWSKI
-      ~ termin ukończenia: 9 maj, poprawki do 13 maja
+      ~ termin ukończenia: 6 maj, poprawki do 10 maja
   - księga przychodów i rozchodów:
       * stworzenie księgi przychodów i rozchodów
       - PIOTREK OSTROWSKI
-      ~ termin ukończenia: 9 maj, poprawki do 13 maja
+      ~ termin ukończenia: 6 maj, poprawki do 10 maja
 
 2. Iteracja - szczegółowo:
   - skalowalność:
