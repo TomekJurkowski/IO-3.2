@@ -1,0 +1,22 @@
+{#{% extends 'start_page.html' %}#}
+
+{#{% block head %}#}
+
+{#{% endblock %}#}
+
+{#{% block content %}#}
+
+<p>BILANS OTWARCIA</p>
+
+<fieldset>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Wprowadź bilans otwarcia"/>
+        <input type="reset" value="Przywróć wartości domyślne"/>
+
+    </form>
+</fieldset>
+
+{#{% endblock %}#}
