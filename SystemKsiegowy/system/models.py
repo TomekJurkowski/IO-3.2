@@ -100,36 +100,36 @@ class FakturaVAT(models.Model):
     uwagi = models.TextField()
 
 
-    # def clean_fields(self, exclude=None):
-    #     if self.sprzedawca_nazwa == '' or self.sprzedawca_nazwa == None:
-    #         raise ValidationError(u'Podaj nazwe (imie i nazwisko w pzypadku osoby fizycznej).')
-    #     if self.sprzedawca_adres == '' or self.sprzedawca_adres == None:
-    #         raise ValidationError(u'Podaj adres.')
-    #     if self.sprzedawca_miasto == '' or self.sprzedawca_miasto== None:
-    #         raise ValidationError(u'Podaj miejscowosc.')
-    #     if self.sprzedawca_kod == '' or self.sprzedawca_kod == None:
-    #         raise ValidationError(u'Podaj kod pocztowy (5 cyfr).')
-    #     if not (self.sprzedawca_kod.isdigit()) or (len(self.sprzedawca_kod) != 5):
-    #         raise ValidationError(u'Kod Pocztowy powinien skladac sie z 5 cyfr.')
-    #     if self.sprzedawca_NIP == '' or self.sprzedawca_NIP == None:
-    #         raise ValidationError(u'Podaj NIP (10 cyfr).')
-    #     if not (self.sprzedawca_NIP.isdigit()) or (len(self.sprzedawca_NIP) != 5):
-    #         raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
-    #
-    #     if self.nabywca_nazwa == '' or self.nabywca_nazwa == None:
-    #         raise ValidationError(u'Podaj nazwe (imie i nazwisko w pzypadku osoby fizycznej).')
-    #     if self.nabywca_adres == '' or self.nabywca_adres == None:
-    #         raise ValidationError(u'Podaj adres.')
-    #     if self.nabywca_miasto == '' or self.nabywca_miasto== None:
-    #         raise ValidationError(u'Podaj miejscowosc.')
-    #     if self.nabywca_kod == '' or self.nabywca_kod == None:
-    #         raise ValidationError(u'Podaj kod pocztowy (5 cyfr).')
-    #     if not (self.nabywca_kod.isdigit()) or (len(self.nabywca_kod) != 5):
-    #         raise ValidationError(u'Kod Pocztowy powinien skladac sie z 5 cyfr.')
-    #     if self.nabywca_NIP == '' or self.nabywca_NIP == None:
-    #         raise ValidationError(u'Podaj NIP (10 cyfr).')
-    #     if not (self.nabywca_NIP.isdigit()) or (len(self.nabywca_NIP) != 5):
-    #         raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
+    def clean_fields(self, exclude=None):
+        if self.sprzedawca_nazwa == '' or self.sprzedawca_nazwa == None:
+            raise ValidationError(u'Podaj nazwe (imie i nazwisko w pzypadku osoby fizycznej).')
+        if self.sprzedawca_adres == '' or self.sprzedawca_adres == None:
+            raise ValidationError(u'Podaj adres.')
+        if self.sprzedawca_miasto == '' or self.sprzedawca_miasto== None:
+            raise ValidationError(u'Podaj miejscowosc.')
+        if self.sprzedawca_kod == '' or self.sprzedawca_kod == None:
+            raise ValidationError(u'Podaj kod pocztowy (5 cyfr).')
+        if not (self.sprzedawca_kod.isdigit()) or (len(self.sprzedawca_kod) != 5):
+            raise ValidationError(u'Kod Pocztowy powinien skladac sie z 5 cyfr.')
+        if self.sprzedawca_NIP == '' or self.sprzedawca_NIP == None:
+            raise ValidationError(u'Podaj NIP (10 cyfr).')
+        if not (self.sprzedawca_NIP.isdigit()) or (len(self.sprzedawca_NIP) != 5):
+            raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
+
+        if self.nabywca_nazwa == '' or self.nabywca_nazwa == None:
+            raise ValidationError(u'Podaj nazwe (imie i nazwisko w pzypadku osoby fizycznej).')
+        if self.nabywca_adres == '' or self.nabywca_adres == None:
+            raise ValidationError(u'Podaj adres.')
+        if self.nabywca_miasto == '' or self.nabywca_miasto== None:
+            raise ValidationError(u'Podaj miejscowosc.')
+        if self.nabywca_kod == '' or self.nabywca_kod == None:
+            raise ValidationError(u'Podaj kod pocztowy (5 cyfr).')
+        if not (self.nabywca_kod.isdigit()) or (len(self.nabywca_kod) != 5):
+            raise ValidationError(u'Kod Pocztowy powinien skladac sie z 5 cyfr.')
+        if self.nabywca_NIP == '' or self.nabywca_NIP == None:
+            raise ValidationError(u'Podaj NIP (10 cyfr).')
+        if not (self.nabywca_NIP.isdigit()) or (len(self.nabywca_NIP) != 5):
+            raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
 
     def __unicode__(self):
         return 'Faktura VAT nr %s' % self.nrFaktury
@@ -148,7 +148,8 @@ class PozycjaFaktury(models.Model):
     VAT = models.PositiveIntegerField()
 
     def clean_fields(self, exclude=None):
-        pass
+        if self.cena <= 0:
+            raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
 
     def __unicode__(self):
         return 'Pozycja faktury VAT o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)
