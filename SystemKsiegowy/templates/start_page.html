@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="conteiner">
+    <div class="bs-docs-example">
+    <div class="tabbable tabs-left">
+        <ul id="main_menu" class="nav nav-tabs">
+            <li>
+                <a id="StartPage" href="/" data-toggle="tab">Strona startowa</a>
+            </li>
+            <li>
+                <a id="Bilans" href="/bilans/" data-toggle="tab">Bilans otwarcia</a>
+            </li>
+            <li>
+                <a id="KsiegowanieFaktur" href="/ksiegowanie/" data-toggle="tab">Księgowanie faktur</a>
+            </li>
+            <li>
+                <a id="KsiegaPR" href="/ksiegaPR/" data-toggle="tab">Księga przychodów i rozchodów</a>
+            </li>
+            <li>
+                <div class="btn btn-danger">
+                <a href="" data-toggle="tab">Wyloguj</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+{% endblock main %}
