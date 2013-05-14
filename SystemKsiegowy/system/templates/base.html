@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    <link href={% static "css/main.css" %} rel="stylesheet">
+    <link href={% static "css/bootstrap.min.css" %} rel="stylesheet">
+    <link href={% static "css/bootstrap-responsive.css" %} rel="stylesheet">
+    <script src={% static "js/bootstrap.js" %}></script>
+    <script src={% static "js/jquery-1.9.1.min.js" %}></script>
+
+    <script>
+        /* set active menu element after site load */
+        $(function () {
+            console.log("fasada");
+            $('#main_menu').children().children().each(function (nr, el) {
+                console.log($(this).attr('id'));
+                console.log("{{ view }}");
+               if ("{{ view }}".indexOf($(this).attr('id')) > 0) {
+                   $(this).parent().addClass('active')
+               }
+            })
+        })
+    </script>
+    {% block  additional_head %}
+    {%  endblock additional_head %}
+</head>
+<body>
+<div class="">
+{% block main %}
+{% endblock main %}
+</div>
+</body>
+</html>

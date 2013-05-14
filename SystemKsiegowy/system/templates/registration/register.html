@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+    <div class="" id="loginModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Have an Account?</h3>
+        </div>
+            <div class="well">
+                <ul class="nav nav-tabs">
+                    <li><a href="/login/" data-toggle="tab">Login</a></li>
+                    <li class="active"><a href="/register/" data-toggle="tab">Create Account</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active" id="create">
+                        </form>
+
+                        <legend> Wpisz dane do rejestracji</legend>
+                        <form method="post" action="/register/">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Rejestracja"> <input type="reset" value="Wartości początkowe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {%  endblock content %}
+{% endblock main %}
