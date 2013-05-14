@@ -85,3 +85,33 @@ class FakturaVATForm(forms.Form):
                 self._errors['nr_konta'] = self.error_class([u'To pole musi byc zdefiniowane tylko dla sposobu zaplaty - przelew.'])
 
         return cleaned_data
+
+
+JEDNOSTKI_MIARY = [
+    ('szt.', 'szt.'),
+    ('kg', 'kg'),
+    ('litr', 'litr')
+]
+
+class PozycjaFakturyForm(forms.Form):
+    # fakturaVAT = models.ForeignKey(FakturaVAT)
+    nazwa = forms.CharField(label='Nazwa pozycji:', max_length=80)
+    PKWiU = forms.CharField(label='PKWiU', max_length=20)
+    jednostkaMiary = forms.ChoiceField(label='Jednostka miary', widget=forms.Select(), choices=JEDNOSTKI_MIARY)
+    ilosc = forms.IntegerField(label='Ilosc')
+    cena = forms.FloatField(label='cena')
+    VAT = forms.IntegerField(label='VAT')
+
+    def clean(self):
+        cleaned_data = super(FakturaVATForm, self).clean()
+        i = cleaned_data.get("ilosc", None)
+        c = cleaned_data.get("cena", None)
+        v = cleaned_data.get("VAT", None)
+        if i <= 0:
+            self._errors['ilosc'] = self.error_class([u'Ilosc powinna byc wartoscia dodatnia.'])
+        if c <= 0:
+            self._errors['cena'] = self.error_class([u'Cena powinna byc wartoscia dodatnia.'])
+        if v <= 0 or v >= 100:
+            self._errors['VAT'] = self.error_class([u'Wartosc pola VAT powinna byc z zakresu (0, 100).'])
+
+        return cleaned_data

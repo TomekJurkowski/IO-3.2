@@ -48,5 +48,21 @@ class KsiegowanieFakturView(TemplateView):
         return render(request, self.template_name, {'form': form})
 
 
+class DodaniePozycjiFakturView(TemplateView):
+    template_name = "faktura_form.html"
+    form_class = FakturaVATForm
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request,  self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect(reverse('StartPage'))
+
+        return render(request, self.template_name, {'form': form})
+
+
 class KsiegaPRView(TemplateView):
     template_name = "start_page.html"
