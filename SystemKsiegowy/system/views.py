@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
-from system.forms import BilansOtwarciaForm, FakturaVATForm
+from system.forms import BilansOtwarciaForm, FakturaVATForm, PozycjaFakturyForm
 from system.models import BilansOtwarcia
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
@@ -49,8 +49,8 @@ class KsiegowanieFakturView(TemplateView):
 
 
 class DodaniePozycjiFakturView(TemplateView):
-    template_name = "faktura_form.html"
-    form_class = FakturaVATForm
+    template_name = "pozycja_form.html"
+    form_class = PozycjaFakturyForm
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()

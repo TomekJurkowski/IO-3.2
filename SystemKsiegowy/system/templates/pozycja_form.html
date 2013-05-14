@@ -1,0 +1,20 @@
+{#{% extends 'start_page.html' %}#}
+
+{#{% block head %}#}
+
+{#{% endblock %}#}
+
+{#{% block content %}#}
+
+<p>DODAJ POZYCJE DO FAKTURY</p>
+
+<fieldset>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Dodaj"/>
+        <input type="reset" value="Przywróć wartości domyślne"/>
+    </form>
+</fieldset>
+
+{#{% endblock %}#}

@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from system.models import BilansOtwarcia, FakturaVAT
 from django import forms
 from django.forms.extras.widgets import SelectDateWidget
+from django.utils.encoding import smart_str
 
 class BilansOtwarciaForm(ModelForm):
     class Meta:
@@ -93,8 +94,18 @@ JEDNOSTKI_MIARY = [
     ('litr', 'litr')
 ]
 
+def getFacturaVAT():
+    ret = [('123','123'), ('543','543')]
+    # for f in FakturaVAT.objects.all():
+    #     if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
+    #         print(smart_str(f.nrFaktury))
+    #         ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
+    # print ret
+    return ret
+
+
 class PozycjaFakturyForm(forms.Form):
-    # fakturaVAT = models.ForeignKey(FakturaVAT)
+    fakturaVAT = forms.ChoiceField(label='Pozycja do faktury:', widget=forms.Select(), choices=getFacturaVAT())
     nazwa = forms.CharField(label='Nazwa pozycji:', max_length=80)
     PKWiU = forms.CharField(label='PKWiU', max_length=20)
     jednostkaMiary = forms.ChoiceField(label='Jednostka miary', widget=forms.Select(), choices=JEDNOSTKI_MIARY)

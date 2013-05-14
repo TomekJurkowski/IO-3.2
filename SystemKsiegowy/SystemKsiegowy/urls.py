@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from system.views import StartPageView, BilansView, KsiegowanieFakturView, KsiegaPRView
+from system.views import StartPageView, BilansView, KsiegowanieFakturView, KsiegaPRView, DodaniePozycjiFakturView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,6 +10,7 @@ urlpatterns = patterns('',
                        url(r'^$', StartPageView.as_view(), name='StartPage'),
                        url(r'^bilans/$', BilansView.as_view(), name='bilans'),
                        url(r'^ksiegowanie/$', KsiegowanieFakturView.as_view(), name='ksiegowanieFaktur'),
+                       url(r'^pozycja/$', DodaniePozycjiFakturView.as_view(), name='dodaniePozycjiFaktury'),
                        url(r'^ksiegaPR/$', KsiegaPRView.as_view(), name='ksiegaPR'),
 
                        # url(r'^SystemKsiegowy/', include('SystemKsiegowy.foo.urls')),
