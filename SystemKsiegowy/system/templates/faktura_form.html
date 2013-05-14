@@ -1,9 +1,19 @@
 {% extends 'start_page.html' %}
 
-{#{% block head %}#}
+{% block  additional_head %}
 
-{#{% endblock %}#}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}datepicker/css/datepicker.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}datepicker/js/bootstrap-datepicker.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#id_data_sprzedazy').datepicker({}).data('datepicker');
+            $('#id_data_wystawienia').datepicker({}).data('datepicker');
+            $('#id_termin_zaplaty').datepicker({}).data('datepicker');
+        });
+    </script>
+
+{%  endblock additional_head %}
 {% block content %}
 
     <p>FORMULARZ FAKTURY</p>
@@ -11,7 +21,111 @@
     <fieldset>
         <form method="post" action=".">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="fieldWrapper">
+                {{ form.nr_faktury.errors }}
+                <label for="id_nr_faktury">Nr faktury:</label>
+                {{ form.nr_faktury }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.data_sprzedazy.errors }}
+                <label for="id_data_sprzedazy">Data sprzedazy:</label>
+                <div class="input-append date" id="d1" data-date-format="yyyy-mm-dd">
+                    {{ form.data_sprzedazy }}
+                </div>
+            </div>
+            <div class="fieldWrapper">
+                {{ form.data_wystawienia.errors }}
+                <label for="id_data_wystawienia">Data wystawienia:</label>
+                <div class="input-append date" id="d2" data-date-format="yyyy-mm-dd">
+                    {{ form.data_wystawienia }}
+                </div>
+            </div>
+
+            <div class="fieldWrapper">
+                {{ form.sprzedawca_nazwa.errors }}
+                <label for="id_sprzedawca_nazwa">Nazwa sprzedawcy:</label>
+                {{ form.sprzedawca_nazwa }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.sprzedawca_adres.errors }}
+                <label for="id_sprzedawca_adres">Adres sprzedawcy:</label>
+                {{ form.sprzedawca_adres }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.sprzedawca_miasto.errors }}
+                <label for="id_sprzedawca_miasto">Miasto sprzedawcy:</label>
+                {{ form.sprzedawca_miasto }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.sprzedawca_kod.errors }}
+                <label for="id_sprzedawca_kod">Kod pocztowy:</label>
+                {{ form.sprzedawca_kod }}
+                {{ form.sprzedawca_kod.help_text }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.sprzedawca_NIP.errors }}
+                <label for="id_sprzedawca_NIP">NIP sprzedawcy:</label>
+                {{ form.sprzedawca_NIP }}
+                {{ form.sprzedawca_NIP.help_text }}
+            </div>
+
+            <div class="fieldWrapper">
+                {{ form.nabywca_nazwa.errors }}
+                <label for="id_nabywca_nazwa">Nazwa nabywcy:</label>
+                {{ form.nabywca_nazwa }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.nabywca_adres.errors }}
+                <label for="id_nabywca_adres">Adres nabywcy:</label>
+                {{ form.nabywca_adres }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.nabywca_miasto.errors }}
+                <label for="id_nabywca_miasto">Miasto nabywcy:</label>
+                {{ form.nabywca_miasto }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.nabywca_kod.errors }}
+                <label for="id_nabywca_kod">Kod pocztowy:</label>
+                {{ form.nabywca_kod }}
+                {{ form.nabywca_kod.help_text }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.nabywca_NIP.errors }}
+                <label for="id_nabywca_NIP">NIP nabywcy:</label>
+                {{ form.nabywca_NIP }}
+                {{ form.nabywca_NIP.help_text }}
+            </div>
+
+            <div class="fieldWrapper">
+                {{ form.sposob_zaplaty.errors }}
+                <label for="id_sposob_zaplaty">Sposob zaplaty:</label>
+                {{ form.sposob_zaplaty }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.termin_zaplaty.errors }}
+                <label for="id_termin_zaplaty">Termin zaplaty:</label>
+                <div class="input-append date" id="d2" data-date-format="yyyy-mm-dd">
+                    {{ form.termin_zaplaty }}
+                </div>
+            </div>
+            <div class="fieldWrapper">
+                {{ form.bank.errors }}
+                <label for="id_bank">Bank:</label>
+                {{ form.bank}}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.nr_konta.errors }}
+                <label for="id_nr_konta">Numer konta:</label>
+                {{ form.nr_konta }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.uwagi.errors }}
+                <label for="id_uwagi">Uwagi:</label>
+                {{ form.uwagi }}
+                {{ form.uwagi.help_text }}
+            </div>
+
             <input type="submit" value="Zaksięguj fakturę"/>
             <input type="reset" value="Przywróć wartości domyślne"/>
         </form>

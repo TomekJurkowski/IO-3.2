@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, DateInput
 from system.models import BilansOtwarcia, FakturaVAT
 from django import forms
 from django.forms.extras.widgets import SelectDateWidget
@@ -19,8 +19,8 @@ SPOSOBY_PLATNOSCI = [
 class FakturaVATForm(forms.Form):
 
     nr_faktury = forms.CharField(label='Numer faktury:', max_length=15)
-    data_sprzedazy = forms.DateField(label='Data sprzedazy:', widget=SelectDateWidget)
-    data_wystawienia = forms.DateField(label='Data wystawienia:', widget=SelectDateWidget)
+    data_sprzedazy = forms.DateField(label='Data sprzedazy:', widget=DateInput)
+    data_wystawienia = forms.DateField(label='Data wystawienia:', widget=DateInput)
 
     sprzedawca_nazwa = forms.CharField(label='Nazwa sprzedawcy:', max_length=80)
     sprzedawca_adres = forms.CharField(label='Adres:', max_length=100)
@@ -35,7 +35,7 @@ class FakturaVATForm(forms.Form):
     nabywca_NIP = forms.CharField(label='NIP nabywcy:', help_text='Nr NIP powinien byc ciagiem 10 cyfr', max_length=10)
 
     sposob_zaplaty = forms.ChoiceField(label='Sposob zaplaty:', widget=forms.Select(), choices=SPOSOBY_PLATNOSCI)
-    termin_zaplaty = forms.DateField(label='Termin zaplaty:', widget=SelectDateWidget)
+    termin_zaplaty = forms.DateField(label='Termin zaplaty:', widget=DateInput)
     bank = forms.CharField(label='Bank:', max_length=70, required=False)
     nr_konta = forms.CharField(label='Numer konta:', max_length=32, required=False)
     uwagi = forms.CharField(label='Uwagi:', help_text='Tu wpisz dodatkowe informacje, uwagi - pole nieobowiazkowe', widget=forms.Textarea, required=False)
