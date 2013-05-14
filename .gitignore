@@ -2,6 +2,7 @@
 *.o
 *.a
 *.so
+*.py[cod]
 
 # Folders
 _obj
