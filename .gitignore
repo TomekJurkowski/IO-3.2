@@ -23,4 +23,5 @@ _testmain.go
 *.exe
 
 # shnela's files
-./SystemKsiegowy/.idea
+SystemKsiegowy/.idea
+.idea/

@@ -1,33 +1,22 @@
-{% extends "base.html" %}
-{% block main %}
-    <div class="" id="loginModal">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3>Have an Account?</h3>
-        </div>
-        <div class="modal-body">
-            <div class="well">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="/login/" data-toggle="tab">Login</a></li>
-                    <li><a href="/register/" data-toggle="tab">Create Account</a></li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane active in" id="login">
-                        <form class="form-horizontal" action='' method="POST">
-                            <fieldset>
-                                <form method="post" action="">
-                                    {% csrf_token %}
-                                    <div style="text-align:left";>
-                                    {{ form.as_p }}</div>
-                                    <input type="hidden" name="next" value="/" />
-                                    <input type="submit" value="Logowanie"/>    <input type="reset" value="Wartości domyślne"/>
-                    </form>
-                            </fieldset>
-                        </form>
+{% extends "registration/base.html" %}
+{% block content %}
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{% url 'login' %}" data-toggle="tab">Login</a></li>
+            <li><a href="{% url 'register' %}" data-toggle="tab">Create Account</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="login">
+                <form class="form-horizontal" action='' method="POST">
+                    <fieldset>
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div style="text-align:left";>
+                {{ form.as_p }}</div>
+            <input type="hidden" name="next" value="/" />
+            <input type="submit" value="Logowanie"/>    <input type="reset" value="Wartości domyślne"/>
+            </form>
+            </fieldset>
+            </form>
 
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-{% endblock main %}
+{% endblock content %}
