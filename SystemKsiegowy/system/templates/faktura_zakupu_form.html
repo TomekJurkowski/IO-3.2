@@ -1,0 +1,17 @@
+{% extends 'faktura_form.html' %}
+
+{% block faktura_content_title %}
+
+<h2>FORMULARZ FAKTURY ZAKUPU</h2>
+
+{% endblock %}
+
+{% block faktura_content %}
+
+            <div class="fieldWrapper">
+                {{ form.nr_faktury.errors }}
+                <label for="id_nr_faktury">Numer Faktury:</label>
+                {{ form.nr_faktury }}
+            </div>
+
+{% endblock %}

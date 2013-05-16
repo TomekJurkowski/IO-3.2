@@ -10,8 +10,8 @@ from django.views.generic import TemplateView, FormView
 import time
 from datetime import date
 
-from system.forms import BilansOtwarciaForm, FakturaVATForm, PozycjaFakturyForm, RegisterForm
-from system.models import BilansOtwarcia, FakturaVAT
+from system.forms import BilansOtwarciaForm, FakturaVATSprzedazyForm, PozycjaFakturySprzedazyForm, FakturaVATZakupuForm, RegisterForm
+from system.models import BilansOtwarcia, FakturaVATSprzedazy, FakturaVATZakupu
 
 
 class StartPageView(TemplateView):
@@ -41,43 +41,43 @@ class BilansView(FormView):
 def getFakturaNr():
     nr = 0
     t = smart_str(date.today())
-    for f in FakturaVAT.objects.all():
+    for f in FakturaVATSprzedazy.objects.all():
         if (smart_str(f.nrFaktury).find(t) >= 0):
             nr += 1
 
     return t + '/' + str(nr)
 
-class KsiegowanieFakturView(FormView):
-    template_name = "faktura_form.html"
-    form_class = FakturaVATForm
+class KsiegowanieFakturSprzedazyView(FormView):
+    template_name = "faktura_sprzedazy_form.html"
+    form_class = FakturaVATSprzedazyForm
 
     def form_valid(self, form):
         cd = form.cleaned_data
         print(cd)
-        f = FakturaVAT(nrFaktury=getFakturaNr(), dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
-                       sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
-                       sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
-                       nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
-                       nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
-                       sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
-                       nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
+        f = FakturaVATSprzedazy(nrFaktury=getFakturaNr(), dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
+                                sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
+                                sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
+                                nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
+                                nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
+                                sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
+                                nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
         print(f)
         f.save()
         print("FAKTURY:")
-        for f in FakturaVAT.objects.all():
+        for f in FakturaVATSprzedazy.objects.all():
             print (f)
         return HttpResponseRedirect(reverse('StartPage'))
 
     def get_context_data(self, **kwargs):
-        context = super(KsiegowanieFakturView, self).get_context_data()
+        context = super(KsiegowanieFakturSprzedazyView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
         context['faktura_nr'] = getFakturaNr()
         return context
 
 
-class DodaniePozycjiFakturView(TemplateView):
+class DodaniePozycjiFakturSprzedazyView(TemplateView):
     template_name = "pozycja_form.html"
-    form_class = PozycjaFakturyForm
+    form_class = PozycjaFakturySprzedazyForm
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
@@ -89,6 +89,33 @@ class DodaniePozycjiFakturView(TemplateView):
             return HttpResponseRedirect(reverse('StartPage'))
 
         return render(request, self.template_name, {'form': form})
+
+
+class KsiegowanieFakturZakupuView(FormView):
+    template_name = "faktura_zakupu_form.html"
+    form_class = FakturaVATZakupuForm
+
+    def form_valid(self, form):
+        cd = form.cleaned_data
+        print(cd)
+        f = FakturaVATZakupu(nrFaktury=cd['nr_faktury'], dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
+                                sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
+                                sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
+                                nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
+                                nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
+                                sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
+                                nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
+        print(f)
+        f.save()
+        print("FAKTURY:")
+        for f in FakturaVATZakupu.objects.all():
+            print (f)
+        return HttpResponseRedirect(reverse('StartPage'))
+
+    def get_context_data(self, **kwargs):
+        context = super(KsiegowanieFakturZakupuView, self).get_context_data()
+        context['form'] = self.get_form(self.form_class)
+        return context
 
 
 class KsiegaPRView(TemplateView):

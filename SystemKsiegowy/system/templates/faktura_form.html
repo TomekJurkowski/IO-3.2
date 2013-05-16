@@ -16,14 +16,16 @@
 {%  endblock additional_head %}
 {% block content %}
 
-    <p>FORMULARZ FAKTURY</p>
+{% block faktura_content_title %}
+{% endblock %}
 
     <fieldset>
         <form method="post" action=".">
             {% csrf_token %}
-            <div class="fieldWrapper">
-                <h3 id="id_nr_faktury">Nr faktury: {{ faktura_nr }}</h3>
-            </div>
+
+            {% block faktura_content %}
+            {% endblock %}
+
             <div class="fieldWrapper">
                 {{ form.data_sprzedazy.errors }}
                 <label for="id_data_sprzedazy">Data sprzedazy:</label>
