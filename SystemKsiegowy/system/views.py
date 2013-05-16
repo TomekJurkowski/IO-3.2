@@ -5,10 +5,13 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
 from django.template.loader import get_template
-from django.views.generic import TemplateView
+from django.utils.encoding import smart_str
+from django.views.generic import TemplateView, FormView
+import time
+from datetime import date
 
 from system.forms import BilansOtwarciaForm, FakturaVATForm, PozycjaFakturyForm, RegisterForm
-from system.models import BilansOtwarcia
+from system.models import BilansOtwarcia, FakturaVAT
 
 
 class StartPageView(TemplateView):
@@ -16,41 +19,60 @@ class StartPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         elements = super(StartPageView, self).get_context_data()
+        print(elements)
         print ('view')
         print (elements['view'])
         return elements
 
 
-class BilansView(TemplateView):
+class BilansView(FormView):
     template_name = "bilans_form.html"
     form_class = BilansOtwarciaForm
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request,  self.template_name, {'form': form})
+    def form_valid(self, form):
+        return HttpResponseRedirect(reverse('StartPage'))
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect(reverse('StartPage'))
-
-        return render(request, self.template_name, {'form': form})
+    def get_context_data(self, **kwargs):
+        context = super(BilansView, self).get_context_data()
+        context['form'] = self.get_form(self.form_class)
+        return context
 
 
-class KsiegowanieFakturView(TemplateView):
+def getFakturaNr():
+    nr = 0
+    t = smart_str(date.today())
+    for f in FakturaVAT.objects.all():
+        if (smart_str(f.nrFaktury).find(t) >= 0):
+            nr += 1
+
+    return t + '/' + str(nr)
+
+class KsiegowanieFakturView(FormView):
     template_name = "faktura_form.html"
     form_class = FakturaVATForm
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request,  self.template_name, {'form': form})
+    def form_valid(self, form):
+        cd = form.cleaned_data
+        print(cd)
+        f = FakturaVAT(nrFaktury=getFakturaNr(), dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
+                       sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
+                       sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
+                       nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
+                       nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
+                       sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
+                       nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
+        print(f)
+        f.save()
+        print("FAKTURY:")
+        for f in FakturaVAT.objects.all():
+            print (f)
+        return HttpResponseRedirect(reverse('StartPage'))
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect(reverse('StartPage'))
-
-        return render(request, self.template_name, {'form': form})
+    def get_context_data(self, **kwargs):
+        context = super(KsiegowanieFakturView, self).get_context_data()
+        context['form'] = self.get_form(self.form_class)
+        context['faktura_nr'] = getFakturaNr()
+        return context
 
 
 class DodaniePozycjiFakturView(TemplateView):

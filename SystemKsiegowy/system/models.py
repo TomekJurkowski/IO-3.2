@@ -86,7 +86,6 @@ class FakturaVAT(models.Model):
     sprzedawca_kod = models.CharField(max_length=5)
     sprzedawca_NIP = models.CharField(max_length=10)
 
-
     nabywca_nazwa = models.CharField(max_length=80)
     nabywca_adres = models.CharField(max_length=100)
     nabywca_miasto = models.CharField(max_length=50)
@@ -98,7 +97,6 @@ class FakturaVAT(models.Model):
     bank = models.CharField(max_length=70)
     nrKonta = models.CharField(max_length=30)
     uwagi = models.TextField()
-
 
     def clean_fields(self, exclude=None):
         if self.sprzedawca_nazwa == '' or self.sprzedawca_nazwa == None:

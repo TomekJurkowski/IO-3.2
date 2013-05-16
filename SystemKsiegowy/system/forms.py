@@ -18,7 +18,6 @@ SPOSOBY_PLATNOSCI = [
 
 class FakturaVATForm(forms.Form):
 
-    nr_faktury = forms.CharField(label='Numer faktury:', max_length=15)
     data_sprzedazy = forms.DateField(label='Data sprzedazy:', widget=DateInput)
     data_wystawienia = forms.DateField(label='Data wystawienia:', widget=DateInput)
 
@@ -42,31 +41,35 @@ class FakturaVATForm(forms.Form):
 
     def clean(self):
         cleaned_data = super(FakturaVATForm, self).clean()
-        n = cleaned_data.get("nr_faktury", None)
-        # TODO:sprawdz poprawnosc nr faktury
 
         ds = cleaned_data.get("data_sprzedazy", None)
         dw = cleaned_data.get("data_wystawienia", None)
         tz = cleaned_data.get("termin_zaplaty", None)
-        if ds > dw:
-            self._errors['data_sprzedazy'] = self.error_class([u'Data sprzedazy nie moze byc pozniejsza od daty wystawienia.'])
-            self._errors['data_wystawienia'] = self.error_class([u'Data wystawienia nie moze byc wczesniejsza od daty sprzedazy.'])
-        if tz > dw:
-            self._errors['termin_zaplaty'] = self.error_class([u'Termin zaplaty nie moze byc pozniejszy od daty wystawienia.'])
-            self._errors['data_wystawienia'] = self.error_class([u'Data wystawienia nie moze byc wczesniejsza od terminu zaplaty.'])
+        if ds and dw:
+            if ds > dw:
+                self._errors['data_sprzedazy'] = self.error_class([u'Data sprzedazy nie moze byc pozniejsza od daty wystawienia.'])
+                self._errors['data_wystawienia'] = self.error_class([u'Data wystawienia nie moze byc wczesniejsza od daty sprzedazy.'])
+        if tz and dw:
+            if tz > dw:
+                self._errors['termin_zaplaty'] = self.error_class([u'Termin zaplaty nie moze byc pozniejszy od daty wystawienia.'])
+                self._errors['data_wystawienia'] = self.error_class([u'Data wystawienia nie moze byc wczesniejsza od terminu zaplaty.'])
 
         sk = cleaned_data.get("sprzedawca_kod", None)
-        if len(sk) != 5:
-            self._errors['sprzedawca_kod'] = self.error_class([u'Kod pocztowy powinien skladac sie z 5 cyfr.'])
+        if sk:
+            if len(sk) != 5:
+                self._errors['sprzedawca_kod'] = self.error_class([u'Kod pocztowy powinien skladac sie z 5 cyfr.'])
         nk = cleaned_data.get("nabywca_kod", None)
-        if len(nk) != 5:
-            self._errors['nabywca_kod'] = self.error_class([u'Kod pocztowy powinien skladac sie z 5 cyfr.'])
+        if nk:
+            if len(nk) != 5:
+                self._errors['nabywca_kod'] = self.error_class([u'Kod pocztowy powinien skladac sie z 5 cyfr.'])
         sn = cleaned_data.get("sprzedawca_NIP", None)
-        if len(sn) != 10:
-            self._errors['sprzedawca_NIP'] = self.error_class([u'Kod pocztowy powinien skladac sie z 10 cyfr.'])
+        if sn:
+            if len(sn) != 10:
+                self._errors['sprzedawca_NIP'] = self.error_class([u'Kod pocztowy powinien skladac sie z 10 cyfr.'])
         nn = cleaned_data.get("nabywca_NIP", None)
-        if len(nn) != 10:
-            self._errors['nabywca_NIP'] = self.error_class([u'Kod pocztowy powinien skladac sie z 10 cyfr.'])
+        if nn:
+            if len(nn) != 10:
+                self._errors['nabywca_NIP'] = self.error_class([u'Kod pocztowy powinien skladac sie z 10 cyfr.'])
 
         sz = cleaned_data.get("sposob_zaplaty", None)
         b = cleaned_data.get("bank", None)
@@ -95,14 +98,12 @@ JEDNOSTKI_MIARY = [
 ]
 
 def getFacturaVAT():
-    ret = [('123','123'), ('543','543')]
-    # for f in FakturaVAT.objects.all():
-    #     if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
-    #         print(smart_str(f.nrFaktury))
-    #         ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
-    # print ret
+    ret = []
+    for f in FakturaVAT.objects.all():
+        if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
+            print(smart_str(f.nrFaktury))
+            ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
     return ret
-
 
 class PozycjaFakturyForm(forms.Form):
     fakturaVAT = forms.ChoiceField(label='Pozycja do faktury:', widget=forms.Select(), choices=getFacturaVAT())
@@ -131,6 +132,6 @@ class PozycjaFakturyForm(forms.Form):
 class RegisterForm(forms.Form):
     username = forms.CharField(label="Login:",max_length=30)
     email = forms.EmailField(label="Email:")
-    password1 = forms.CharField(label="Hasło:",widget=forms.PasswordInput())
-    password2 = forms.CharField(label="Powtórz hasło:",widget=forms.PasswordInput())
+    password1 = forms.CharField(label="Haslo:",widget=forms.PasswordInput())
+    password2 = forms.CharField(label="Powtorz haslo:",widget=forms.PasswordInput())
     log_on = forms.BooleanField(label="Logowanie po rejestracji:",required=False)
