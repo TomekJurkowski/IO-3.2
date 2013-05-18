@@ -1,0 +1,67 @@
+{% extends 'start_page.html' %}
+
+{% block  additional_head %}
+
+    <script type="text/javascript">
+        $(function() {
+            $( '.button' ).click(function() {
+                window.location = "{% url 'StartPage' %}";
+            });
+        });
+    </script>
+
+{%  endblock additional_head %}
+{% block content %}
+
+    <h2>
+        {% if rodzaj == 0 %} Szczegóły faktury zakupu nr
+        {% else %} Szczegóły faktury sprzedazy nr
+        {% endif %}
+
+        {{ f.nrFaktury }}
+    </h2>
+
+    <table class="table table-bordered table-stripped">
+        <thead>
+        <th>Nazwa pozycji:</th>
+        <th>PKWiU:</th>
+        <th>Jednostka miary:</th>
+        <th>Ilość:</th>
+        <th>Cena (zł):</th>
+        <th>Podatek VAT (%):</th>
+        </thead>
+        <tbody>
+
+            {% for p in pozycje %}
+                <tr>
+                    <td>
+                        {{ p.nazwa }}
+                    </td>
+                    <td>
+                        {{ p.PKWiU }}
+                    </td>
+                    <td>
+                        {{ p.ilosc }}
+                    </td>
+                    <td>
+                        {{ p.jednostkaMiary }}
+                    </td>
+                    <td>
+                        {{ p.cena }}
+                    </td>
+                    <td>
+                        {{ p.VAT }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+    <div>
+        <button class="btn btn-danger button">Wróć do Księgi Przychodów i Rozchdów</button>
+    </div>
+
+{% endblock %}

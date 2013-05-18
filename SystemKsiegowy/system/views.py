@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.template.loader import get_template
 from django.utils.encoding import smart_str
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, DetailView
 import time
 from datetime import date
 
@@ -130,6 +130,32 @@ class DodaniePozycjiFakturZakupuView(FormView):
         context = super(DodaniePozycjiFakturZakupuView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
         context['faktura'] = FakturaVATZakupu.objects.get(id=self.kwargs['id']).nrFaktury
+        return context
+
+
+class SzczegolyFakturyZakupu(DetailView):
+    model = FakturaVATZakupu
+    context_object_name = "f"
+    template_name = "szczegoly_faktury.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(SzczegolyFakturyZakupu, self).get_context_data(**kwargs)
+        f = FakturaVATZakupu.objects.get(id=self.kwargs['pk'])
+        context['pozycje'] = PozycjaFakturyZakupu.objects.filter(fakturaVAT=f)
+        context['rodzaj'] = 0
+        return context
+
+
+class SzczegolyFakturySprzedazy(DetailView):
+    model = FakturaVATSprzedazy
+    context_object_name = "f"
+    template_name = "szczegoly_faktury.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(SzczegolyFakturySprzedazy, self).get_context_data(**kwargs)
+        f = FakturaVATSprzedazy.objects.get(id=self.kwargs['pk'])
+        context['pozycje'] = PozycjaFakturySprzedazy.objects.filter(fakturaVAT=f)
+        context['rodzaj'] = 1
         return context
 
 
