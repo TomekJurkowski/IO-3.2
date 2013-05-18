@@ -1,7 +1,6 @@
 from django.forms import ModelForm, DateInput
 from system.models import BilansOtwarcia, FakturaVATSprzedazy
 from django import forms
-from django.forms.extras.widgets import SelectDateWidget
 from django.utils.encoding import smart_str
 
 class BilansOtwarciaForm(ModelForm):
@@ -97,16 +96,15 @@ JEDNOSTKI_MIARY = [
     ('litr', 'litr')
 ]
 
-def getFacturaVAT():
-    ret = []
-    for f in FakturaVATSprzedazy.objects.all():
-        if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
-            print(smart_str(f.nrFaktury))
-            ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
-    return ret
+# def getFacturaVAT():
+#     ret = []
+#     for f in FakturaVATSprzedazy.objects.all():
+#         if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
+#             print(smart_str(f.nrFaktury))
+#             ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
+#     return ret
 
-class PozycjaFakturySprzedazyForm(forms.Form):
-    fakturaVAT = forms.ChoiceField(label='Pozycja do faktury:', widget=forms.Select(), choices=getFacturaVAT())
+class PozycjaFakturyForm(forms.Form):
     nazwa = forms.CharField(label='Nazwa pozycji:', max_length=80)
     PKWiU = forms.CharField(label='PKWiU', max_length=20)
     jednostkaMiary = forms.ChoiceField(label='Jednostka miary', widget=forms.Select(), choices=JEDNOSTKI_MIARY)
@@ -115,7 +113,7 @@ class PozycjaFakturySprzedazyForm(forms.Form):
     VAT = forms.IntegerField(label='VAT')
 
     def clean(self):
-        cleaned_data = super(PozycjaFakturySprzedazyForm, self).clean()
+        cleaned_data = super(PozycjaFakturyForm, self).clean()
         i = cleaned_data.get("ilosc", None)
         c = cleaned_data.get("cena", None)
         v = cleaned_data.get("VAT", None)

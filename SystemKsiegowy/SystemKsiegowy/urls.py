@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from system.views import StartPageView, BilansView, KsiegowanieFakturSprzedazyView, KsiegowanieFakturZakupuView, KsiegaPRView, DodaniePozycjiFakturSprzedazyView, register_page, logout_page
+from system.views import StartPageView, BilansView, KsiegowanieFakturSprzedazyView, KsiegowanieFakturZakupuView, KsiegaPRView, DodaniePozycjiFakturSprzedazyView, DodaniePozycjiFakturZakupuView, register_page, logout_page
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -11,7 +11,8 @@ urlpatterns = patterns('',
                        url(r'^bilans/$', BilansView.as_view(), name='bilans'),
                        url(r'^ksiegowanie_sprzedazy/$', KsiegowanieFakturSprzedazyView.as_view(), name='ksiegowanieFakturSprzedazy'),
                        url(r'^ksiegowanie_zakupu/$', KsiegowanieFakturZakupuView.as_view(), name='ksiegowanieFakturZakupu'),
-                       url(r'^pozycja/$', DodaniePozycjiFakturSprzedazyView.as_view(), name='dodaniePozycjiFakturySprzedazy'),
+                       url(r'^dodaj_pozycje_sprzedazy/(?P<id>\d+)/$', DodaniePozycjiFakturSprzedazyView.as_view(), name='dodaniePozycjiFakturySprzedazy'),
+                       url(r'^dodaj_pozycje_zakupu/(?P<id>\d+)/$', DodaniePozycjiFakturZakupuView.as_view(), name='dodaniePozycjiFakturyZakupu'),
                        url(r'^ksiegaPR/$', KsiegaPRView.as_view(), name='ksiegaPR'),
 
 

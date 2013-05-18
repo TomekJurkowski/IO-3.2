@@ -135,7 +135,7 @@ class FakturaVATSprzedazy(models.Model):
 
 class PozycjaFakturySprzedazy(models.Model):
     """
-    Pojedyncza pozycja faktury VAT.
+    Pojedyncza pozycja faktury VAT Sprzedazy.
     """
     fakturaVAT = models.ForeignKey(FakturaVATSprzedazy)
     nazwa = models.CharField(max_length=60)
@@ -150,7 +150,7 @@ class PozycjaFakturySprzedazy(models.Model):
             raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
 
     def __unicode__(self):
-        return 'Pozycja faktury VAT o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)
+        return 'Pozycja faktury VAT Sprzedazy o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)
 
 
 class FakturaVATZakupu(models.Model):
@@ -213,3 +213,22 @@ class FakturaVATZakupu(models.Model):
     def __unicode__(self):
         return 'Faktura VAT zakupu nr %s' % self.nrFaktury
 
+
+class PozycjaFakturyZakupu(models.Model):
+    """
+    Pojedyncza pozycja faktury VAT Zakupu.
+    """
+    fakturaVAT = models.ForeignKey(FakturaVATZakupu)
+    nazwa = models.CharField(max_length=60)
+    PKWiU = models.CharField(max_length=20)
+    jednostkaMiary = models.CharField(max_length=15)
+    ilosc = models.PositiveIntegerField()
+    cena = models.FloatField()
+    VAT = models.PositiveIntegerField()
+
+    def clean_fields(self, exclude=None):
+        if self.cena <= 0:
+            raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
+
+    def __unicode__(self):
+        return 'Pozycja faktury VAT Zakupu o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)

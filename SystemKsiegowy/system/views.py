@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
 from django.template import RequestContext
 from django.template.loader import get_template
 from django.utils.encoding import smart_str
@@ -10,8 +9,8 @@ from django.views.generic import TemplateView, FormView
 import time
 from datetime import date
 
-from system.forms import BilansOtwarciaForm, FakturaVATSprzedazyForm, PozycjaFakturySprzedazyForm, FakturaVATZakupuForm, RegisterForm
-from system.models import BilansOtwarcia, FakturaVATSprzedazy, FakturaVATZakupu
+from system.forms import BilansOtwarciaForm, FakturaVATSprzedazyForm, PozycjaFakturyForm, FakturaVATZakupuForm, RegisterForm
+from system.models import BilansOtwarcia, FakturaVATSprzedazy, FakturaVATZakupu, PozycjaFakturyZakupu, PozycjaFakturySprzedazy
 
 
 class StartPageView(TemplateView):
@@ -61,12 +60,8 @@ class KsiegowanieFakturSprzedazyView(FormView):
                                 nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
                                 sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
                                 nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
-        print(f)
         f.save()
-        print("FAKTURY:")
-        for f in FakturaVATSprzedazy.objects.all():
-            print (f)
-        return HttpResponseRedirect(reverse('StartPage'))
+        return HttpResponseRedirect(reverse('dodaniePozycjiFakturySprzedazy', kwargs={'id':f.id}))
 
     def get_context_data(self, **kwargs):
         context = super(KsiegowanieFakturSprzedazyView, self).get_context_data()
@@ -75,20 +70,24 @@ class KsiegowanieFakturSprzedazyView(FormView):
         return context
 
 
-class DodaniePozycjiFakturSprzedazyView(TemplateView):
+class DodaniePozycjiFakturSprzedazyView(FormView):
     template_name = "pozycja_form.html"
-    form_class = PozycjaFakturySprzedazyForm
+    form_class = PozycjaFakturyForm
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request,  self.template_name, {'form': form})
+    def form_valid(self, form):
+        cd = form.cleaned_data
+        print(cd)
+        p = PozycjaFakturySprzedazy(fakturaVAT=FakturaVATSprzedazy.objects.get(id=self.kwargs['id']),
+                                    nazwa=cd['nazwa'], PKWiU=cd['PKWiU'], jednostkaMiary=cd['jednostkaMiary'],
+                                    ilosc=cd['ilosc'], cena=cd['cena'], VAT=cd['VAT'])
+        p.save()
+        return HttpResponseRedirect(reverse('StartPage'))
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect(reverse('StartPage'))
-
-        return render(request, self.template_name, {'form': form})
+    def get_context_data(self, **kwargs):
+        context = super(DodaniePozycjiFakturSprzedazyView, self).get_context_data()
+        context['form'] = self.get_form(self.form_class)
+        context['faktura'] = FakturaVATSprzedazy.objects.get(id=self.kwargs['id']).nrFaktury
+        return context
 
 
 class KsiegowanieFakturZakupuView(FormView):
@@ -105,16 +104,32 @@ class KsiegowanieFakturZakupuView(FormView):
                                 nabywca_kod=cd['nabywca_kod'], nabywca_NIP=cd['nabywca_NIP'],
                                 sposobZaplaty=cd['sposob_zaplaty'], terminZaplaty=cd['termin_zaplaty'], bank=cd['bank'],
                                 nrKonta=cd['nr_konta'], uwagi=cd['uwagi'])
-        print(f)
         f.save()
-        print("FAKTURY:")
-        for f in FakturaVATZakupu.objects.all():
-            print (f)
-        return HttpResponseRedirect(reverse('StartPage'))
+        return HttpResponseRedirect(reverse('dodaniePozycjiFakturyZakupu', kwargs={'id':f.id}))
 
     def get_context_data(self, **kwargs):
         context = super(KsiegowanieFakturZakupuView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
+        return context
+
+
+class DodaniePozycjiFakturZakupuView(FormView):
+    template_name = "pozycja_form.html"
+    form_class = PozycjaFakturyForm
+
+    def form_valid(self, form):
+        cd = form.cleaned_data
+        print(cd)
+        p = PozycjaFakturyZakupu(fakturaVAT=FakturaVATZakupu.objects.get(id=self.kwargs['id']),
+                                 nazwa=cd['nazwa'], PKWiU=cd['PKWiU'], jednostkaMiary=cd['jednostkaMiary'],
+                                 ilosc=cd['ilosc'], cena=cd['cena'], VAT=cd['VAT'])
+        p.save()
+        return HttpResponseRedirect(reverse('StartPage'))
+
+    def get_context_data(self, **kwargs):
+        context = super(DodaniePozycjiFakturZakupuView, self).get_context_data()
+        context['form'] = self.get_form(self.form_class)
+        context['faktura'] = FakturaVATZakupu.objects.get(id=self.kwargs['id']).nrFaktury
         return context
 
 

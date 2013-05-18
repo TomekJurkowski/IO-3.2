@@ -1,20 +1,76 @@
-{#{% extends 'start_page.html' %}#}
+{% extends 'start_page.html' %}
 
-{#{% block head %}#}
 
-{#{% endblock %}#}
-
-{#{% block content %}#}
+{% block content %}
 
 <p>DODAJ POZYCJE DO FAKTURY</p>
 
 <fieldset>
+
     <form method="post" action=".">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <table class="table table-bordered table-stripped">
+            <thead>
+                <th>Numer Faktury:</th>
+                <th>Nazwa pozycji:</th>
+                <th>PKWiU:</th>
+                <th>Jednostka miary:</th>
+                <th>Ilość:</th>
+                <th>Cena:</th>
+                <th>Podatek VAT:</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ faktura }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.nazwa.errors }}
+                            {{ form.nazwa }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.PKWiU.errors }}
+                            {{ form.PKWiU }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.jednostkaMiary.errors }}
+                            {{ form.jednostkaMiary }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.ilosc.errors }}
+                            {{ form.ilosc }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.cena.errors }}
+                            {{ form.cena }}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="fieldWrapper">
+                            {{ form.VAT.errors }}
+                            {{ form.VAT }}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
         <input type="submit" value="Dodaj"/>
         <input type="reset" value="Przywróć wartości domyślne"/>
     </form>
 </fieldset>
 
-{#{% endblock %}#}
+{% endblock %}
