@@ -96,14 +96,6 @@ JEDNOSTKI_MIARY = [
     ('litr', 'litr')
 ]
 
-# def getFacturaVAT():
-#     ret = []
-#     for f in FakturaVATSprzedazy.objects.all():
-#         if not ((smart_str(f.nrFaktury), smart_str(f.nrFaktury)) in ret):
-#             print(smart_str(f.nrFaktury))
-#             ret.append( (smart_str(f.nrFaktury), smart_str(f.nrFaktury)))
-#     return ret
-
 class PozycjaFakturyForm(forms.Form):
     nazwa = forms.CharField(label='Nazwa pozycji:', max_length=80)
     PKWiU = forms.CharField(label='PKWiU', max_length=20)

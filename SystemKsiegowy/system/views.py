@@ -81,12 +81,13 @@ class DodaniePozycjiFakturSprzedazyView(FormView):
                                     nazwa=cd['nazwa'], PKWiU=cd['PKWiU'], jednostkaMiary=cd['jednostkaMiary'],
                                     ilosc=cd['ilosc'], cena=cd['cena'], VAT=cd['VAT'])
         p.save()
-        return HttpResponseRedirect(reverse('StartPage'))
+        return HttpResponseRedirect(reverse('dodaniePozycjiFakturySprzedazy', kwargs={'id':self.kwargs['id']}))
 
     def get_context_data(self, **kwargs):
         context = super(DodaniePozycjiFakturSprzedazyView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
         context['faktura'] = FakturaVATSprzedazy.objects.get(id=self.kwargs['id']).nrFaktury
+        context['pozycje'] = PozycjaFakturySprzedazy.objects.filter(fakturaVAT=FakturaVATSprzedazy.objects.get(id=self.kwargs['id']))
         return context
 
 
@@ -124,12 +125,13 @@ class DodaniePozycjiFakturZakupuView(FormView):
                                  nazwa=cd['nazwa'], PKWiU=cd['PKWiU'], jednostkaMiary=cd['jednostkaMiary'],
                                  ilosc=cd['ilosc'], cena=cd['cena'], VAT=cd['VAT'])
         p.save()
-        return HttpResponseRedirect(reverse('StartPage'))
+        return HttpResponseRedirect(reverse('dodaniePozycjiFakturyZakupu', kwargs={'id':self.kwargs['id']}))
 
     def get_context_data(self, **kwargs):
         context = super(DodaniePozycjiFakturZakupuView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
         context['faktura'] = FakturaVATZakupu.objects.get(id=self.kwargs['id']).nrFaktury
+        context['pozycje'] = PozycjaFakturyZakupu.objects.filter(fakturaVAT=FakturaVATZakupu.objects.get(id=self.kwargs['id']))
         return context
 
 

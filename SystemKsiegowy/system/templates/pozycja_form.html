@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>DODAJ POZYCJE DO FAKTURY<h2>
+<h2>DODAJ POZYCJE DO FAKTURY</h2>
 
 <fieldset>
 
@@ -20,53 +20,81 @@
                 <th>Podatek VAT (%):</th>
             </thead>
             <tbody>
+            {% for p in pozycje %}
                 <tr>
                     <td>
                         <div class="fieldWrapper">
-                            {{ faktura }}
+                            <h4>{{ faktura }}</h4>
+                        </div>
+                    </td>
+                    <td>
+                        {{ p.nazwa }}
+                    </td>
+                    <td>
+                        {{ p.PKWiU }}
+                    </td>
+                    <td>
+                        {{ p.jednostkaMiary }}
+                    </td>
+                    <td>
+                        {{ p.ilosc }}
+                    </td>
+                    <td>
+                        {{ p.cena }}
+                    </td>
+                    <td>
+                        {{ p.VAT }}
+                    </td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td>
+                        <div class="fieldWrapper">
+                            <h4>{{ faktura }}</h4>
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.nazwa.errors }}
                             {{ form.nazwa }}
+                            {{ form.nazwa.errors }}
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.PKWiU.errors }}
                             {{ form.PKWiU }}
+                            {{ form.PKWiU.errors }}
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.jednostkaMiary.errors }}
                             {{ form.jednostkaMiary }}
+                            {{ form.jednostkaMiary.errors }}
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.ilosc.errors }}
                             {{ form.ilosc }}
+                            {{ form.ilosc.errors }}
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.cena.errors }}
                             {{ form.cena }}
+                            {{ form.cena.errors }}
                         </div>
                     </td>
                     <td>
                         <div class="fieldWrapper">
-                            {{ form.VAT.errors }}
                             {{ form.VAT }}
+                            {{ form.VAT.errors }}
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <input class="btn btn-danger" type="submit" value="Dodaj"/>
+        <a href="{% url 'StartPage' %}" class="btn btn-danger">Zaksięguj</a>
+        <input class="btn btn-danger" type="submit" value="Dodaj kolejną pozycję"/>
         <input class="btn btn-danger" type="reset" value="Przywróć wartości domyślne"/>
     </form>
 </fieldset>
