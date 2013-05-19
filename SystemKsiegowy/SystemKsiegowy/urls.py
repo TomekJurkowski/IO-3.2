@@ -4,8 +4,8 @@ from system.views import StartPageView, BilansView, KsiegowanieFakturSprzedazyVi
     SzczegolyFakturyZakupu, SzczegolyFakturySprzedazy
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
                        # Examples:
@@ -26,12 +26,16 @@ urlpatterns = patterns('',
                        url(r'^accounts/logout/$', logout_page, name='logout'),
                        url(r'^accouts/register/$', register_page, name='register'),
 
+                       url(r'^login/$','django.contrib.auth.views.login', name='login'),
+                       url(r'^logout/$', logout_page, name='logout'),
+                       url(r'^register/$', register_page, name='register'),
+
                        # url(r'^SystemKsiegowy/', include('SystemKsiegowy.foo.urls')),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
-                       # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
                        # Uncomment the next line to enable the admin:
-                       # url(r'^admin/', include(admin.site.urls)),
+                       url(r'^admin/', include(admin.site.urls)),
 )
 

@@ -4,6 +4,9 @@
 *.so
 *.py[cod]
 
+# tmp files
+*~
+
 # Folders
 _obj
 _test
