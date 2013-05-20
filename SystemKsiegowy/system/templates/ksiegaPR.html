@@ -1,0 +1,11 @@
+{% extends 'start_page.html' %}
+
+{% block content %}
+
+Ksiega PR
+</br>
+
+{% for faktura in sprzedaz %}
+  {{ faktura.nrFaktury }} - {{ faktura.nabywca_nazwa  }} </br>
+{% endfor %}
+{% endblock content %}
