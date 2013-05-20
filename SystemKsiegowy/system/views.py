@@ -169,6 +169,13 @@ class KsiegaPRView(TemplateView):
         context = super(KsiegaPRView, self).get_context_data(**kwargs)
         # f = FakturaVATSprzedazy.objects.get(id=self.kwargs['pk'])
         context['sprzedaz'] = FakturaVATSprzedazy.objects.all()
+        context['zakup'] = FakturaVATZakupu.objects.all()
+        suma = 0
+        for faktura in context['sprzedaz'] :
+            suma += faktura.wartosc()
+        for faktura in context['zakup'] :
+            suma -= faktura.wartosc()
+        context['suma'] = suma
         return context
 
 

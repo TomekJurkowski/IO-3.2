@@ -129,6 +129,12 @@ class FakturaVATSprzedazy(models.Model):
         if not (self.nabywca_NIP.isdigit()) or (len(self.nabywca_NIP) != 5):
             raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
 
+    def wartosc(self):
+        wartosc = 0
+        for pozycja in self.pozycjafakturysprzedazy_set.values() :
+            wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
+        return wartosc
+
     def __unicode__(self):
         return 'Faktura VAT sprzedazy nr %s' % self.nrFaktury
 
@@ -209,6 +215,13 @@ class FakturaVATZakupu(models.Model):
             raise ValidationError(u'Podaj NIP (10 cyfr).')
         if not (self.nabywca_NIP.isdigit()) or (len(self.nabywca_NIP) != 5):
             raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
+
+
+    def wartosc(self):
+        wartosc = 0
+        for pozycja in self.pozycjafakturyzakupu_set.values() :
+            wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
+        return wartosc
 
     def __unicode__(self):
         return 'Faktura VAT zakupu nr %s' % self.nrFaktury
