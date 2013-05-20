@@ -162,7 +162,16 @@ class SzczegolyFakturySprzedazy(DetailView):
 
 
 class KsiegaPRView(TemplateView):
-    template_name = "start_page.html"
+    sprzedaz = FakturaVATSprzedazy.objects.all()
+    template_name = "ksiegaPR.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(KsiegaPRView, self).get_context_data(**kwargs)
+        # f = FakturaVATSprzedazy.objects.get(id=self.kwargs['pk'])
+        context['sprzedaz'] = FakturaVATSprzedazy.objects.all()
+        return context
+
+
 
 
 def register_page(request):
