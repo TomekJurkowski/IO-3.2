@@ -5,3 +5,27 @@
 #content {
     margin: 20px 20px 20px 20px;
 }
+
+#id_nazwa {
+    width: 150px;
+}
+
+#id_PKWiU {
+    width: 150px;
+}
+
+#id_jednostkaMiary {
+    width: 100px;
+}
+
+#id_ilosc {
+    width: 80px;
+}
+
+#id_cena {
+    width: 80px;
+}
+
+#id_VAT {
+    width: 80px;
+}

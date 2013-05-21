@@ -194,7 +194,7 @@ def register_page(request):
             if form.cleaned_data['log_on']:
                 user = authenticate(username=form.cleaned_data['username'],password=form.cleaned_data['password1'])
                 login(request,user)
-                template = get_template("main_page.html")
+                template = get_template("start_page.html")
                 variables = RequestContext(request,{'user':user})
                 output = template.render(variables)
                 return HttpResponseRedirect("/")
