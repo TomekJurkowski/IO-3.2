@@ -63,7 +63,7 @@
         <th>Data sprzedaży:</th>
         <th>Termin zapłaty:</th>
         {% if rodzaj == 0 %}
-            <th>Kwota (zł):</th>
+            <th>Kwota netto (zł):</th>
             <th>Podatek VAT (%):</th>
         {% endif %}
         </thead>
@@ -85,7 +85,7 @@
             <th>PKWiU:</th>
             <th>Jednostka miary:</th>
             <th>Ilość:</th>
-            <th>Cena (zł):</th>
+            <th>Cena netto (zł):</th>
             <th>Podatek VAT (%):</th>
             </thead>
 
@@ -98,10 +98,10 @@
                         {{ p.PKWiU }}
                     </td>
                     <td>
-                        {{ p.ilosc }}
+                        {{ p.jednostkaMiary }}
                     </td>
                     <td>
-                        {{ p.jednostkaMiary }}
+                        {{ p.ilosc }}
                     </td>
                     <td>
                         {{ p.cena }}

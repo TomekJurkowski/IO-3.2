@@ -132,7 +132,7 @@ class FakturaVATSprzedazy(models.Model):
     def wartosc(self):
         wartosc = 0
         for pozycja in self.pozycjafakturysprzedazy_set.values() :
-            wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
+            wartosc += pozycja['cena']*pozycja['ilosc'] + pozycja['cena']*0.01*pozycja['ilosc']*pozycja['VAT']
         return wartosc
 
     def __unicode__(self):
@@ -223,8 +223,6 @@ class FakturaVATZakupu(models.Model):
 
     def wartosc(self):
         wartosc = self.kwota + self.kwota*0.01*self.VAT
-        # for pozycja in self.pozycjafakturyzakupu_set.values() :
-        #     wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
         return wartosc
 
     def __unicode__(self):

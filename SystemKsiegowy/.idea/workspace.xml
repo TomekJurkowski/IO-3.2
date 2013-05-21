@@ -6,15 +6,15 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368906474260" ignored="false" />
     <file path="/views.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369159683123" ignored="false" />
-    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369164326100" ignored="false" />
+    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369165727721" ignored="false" />
     <file path="/forms.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369159214490" ignored="false" />
     <file path="/faktura_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369160899234" ignored="false" />
     <file path="/bilans_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1367865126147" ignored="false" />
-    <file path="/pozycja_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369161687738" ignored="false" />
+    <file path="/pozycja_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369165016251" ignored="false" />
     <file path="/settings.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368705802131" ignored="false" />
     <file path="/a.dummy" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368705821983" ignored="false" />
     <file path="/start_page.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368724311822" ignored="false" />
-    <file path="/faktura_zakupu_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369160957830" ignored="false" />
+    <file path="/faktura_zakupu_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369165643933" ignored="false" />
     <file path="/faktura_sprzedazy_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368725189049" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/eDesk/settings.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775409599" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/eDesk/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775409599" ignored="false" />
@@ -23,7 +23,7 @@
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/tests.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775623611" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/__init__.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775780393" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775808172" ignored="false" />
-    <file path="/szczegoly_faktury.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369164045462" ignored="false" />
+    <file path="/szczegoly_faktury.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369164986558" ignored="false" />
     <file path="/main.css" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369161459465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +49,7 @@
       <file leaf-file-name="szczegoly_faktury.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="4" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-0.625">
+            <state line="61" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="-0.27272728">
               <folding />
             </state>
           </provider>
@@ -58,7 +58,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="227" column="0" selection-start="10569" selection-end="10714" vertical-scroll-proportion="0.86455333">
+            <state line="134" column="95" selection-start="6531" selection-end="6531" vertical-scroll-proportion="0.48387095">
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -69,19 +69,10 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="0" selection-start="5857" selection-end="5857" vertical-scroll-proportion="-4.225806">
+            <state line="94" column="38" selection-start="4134" selection-end="4134" vertical-scroll-proportion="-0.48387095">
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faktura_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-13.791667">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -98,7 +89,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="47" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -121,15 +112,15 @@
         <option value="$PROJECT_DIR$/SystemKsiegowy/settings.py" />
         <option value="$PROJECT_DIR$/system/templates/start_page.html" />
         <option value="$PROJECT_DIR$/system/forms.py" />
-        <option value="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
         <option value="$PROJECT_DIR$/system/templates/faktura_form.html" />
         <option value="$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html" />
-        <option value="$PROJECT_DIR$/system/templates/faktura_zakupu_form.html" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/main.css" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/pozycja.css" />
-        <option value="$PROJECT_DIR$/system/templates/pozycja_form.html" />
         <option value="$PROJECT_DIR$/system/views.py" />
+        <option value="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
+        <option value="$PROJECT_DIR$/system/templates/pozycja_form.html" />
         <option value="$PROJECT_DIR$/system/templates/szczegoly_faktury.html" />
+        <option value="$PROJECT_DIR$/system/templates/faktura_zakupu_form.html" />
         <option value="$PROJECT_DIR$/system/models.py" />
       </list>
     </option>
@@ -542,15 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="47" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/templates/start_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
@@ -579,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/pozycja_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="4" selection-start="65" selection-end="65" vertical-scroll-proportion="0.13392857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="0.7619048">
@@ -593,39 +568,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
+    <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="19" selection-start="563" selection-end="563" vertical-scroll-proportion="0.22619048">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-13.791667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="0" selection-start="5857" selection-end="5857" vertical-scroll-proportion="-4.225806">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="4" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-0.625">
+        <state line="61" column="0" selection-start="1670" selection-end="1670" vertical-scroll-proportion="-0.27272728">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="3000" selection-end="3000" vertical-scroll-proportion="0.90163934">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="474" selection-end="474" vertical-scroll-proportion="0.33630952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/pozycja_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="599" selection-end="599" vertical-scroll-proportion="0.44262296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="38" selection-start="4134" selection-end="4134" vertical-scroll-proportion="-0.48387095">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="0" selection-start="10569" selection-end="10714" vertical-scroll-proportion="0.86455333">
+        <state line="134" column="95" selection-start="6531" selection-end="6531" vertical-scroll-proportion="0.48387095">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
