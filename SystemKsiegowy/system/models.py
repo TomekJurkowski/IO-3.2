@@ -222,9 +222,9 @@ class FakturaVATZakupu(models.Model):
             raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
 
     def wartosc(self):
-        wartosc = 0
-        for pozycja in self.pozycjafakturyzakupu_set.values() :
-            wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
+        wartosc = self.kwota + self.kwota*0.01*self.VAT
+        # for pozycja in self.pozycjafakturyzakupu_set.values() :
+        #     wartosc += pozycja['cena'] + pozycja['cena']*0.01*pozycja['VAT']
         return wartosc
 
     def __unicode__(self):

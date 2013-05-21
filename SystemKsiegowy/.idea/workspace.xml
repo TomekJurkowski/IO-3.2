@@ -6,7 +6,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368906474260" ignored="false" />
     <file path="/views.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369159683123" ignored="false" />
-    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369158980018" ignored="false" />
+    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369164326100" ignored="false" />
     <file path="/forms.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369159214490" ignored="false" />
     <file path="/faktura_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369160899234" ignored="false" />
     <file path="/bilans_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1367865126147" ignored="false" />
@@ -23,7 +23,7 @@
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/tests.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775623611" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/__init__.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775780393" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/edesk/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775808172" ignored="false" />
-    <file path="/szczegoly_faktury.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369160117979" ignored="false" />
+    <file path="/szczegoly_faktury.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369164045462" ignored="false" />
     <file path="/main.css" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369161459465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +49,19 @@
       <file leaf-file-name="szczegoly_faktury.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="14" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-12.75">
+            <state line="69" column="4" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-0.625">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="227" column="0" selection-start="10569" selection-end="10714" vertical-scroll-proportion="0.86455333">
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,7 +69,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="31" selection-start="7014" selection-end="7014" vertical-scroll-proportion="0.0">
+            <state line="130" column="0" selection-start="5857" selection-end="5857" vertical-scroll-proportion="-4.225806">
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -69,34 +80,7 @@
       <file leaf-file-name="faktura_form.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1173" selection-end="1173" vertical-scroll-proportion="-10.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faktura_zakupu_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="4" selection-start="798" selection-end="798" vertical-scroll-proportion="-9.416667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faktura_sprzedazy_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="-10.666667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pozycja_form.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/system/templates/pozycja_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="4" selection-start="65" selection-end="65" vertical-scroll-proportion="0.13392857">
+            <state line="33" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-13.791667">
               <folding />
             </state>
           </provider>
@@ -136,10 +120,7 @@
         <option value="$PROJECT_DIR$/system/templates/bilans_form.html" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/settings.py" />
         <option value="$PROJECT_DIR$/system/templates/start_page.html" />
-        <option value="$PROJECT_DIR$/system/models.py" />
         <option value="$PROJECT_DIR$/system/forms.py" />
-        <option value="$PROJECT_DIR$/system/views.py" />
-        <option value="$PROJECT_DIR$/system/templates/szczegoly_faktury.html" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
         <option value="$PROJECT_DIR$/system/templates/faktura_form.html" />
         <option value="$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html" />
@@ -147,6 +128,9 @@
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/main.css" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/pozycja.css" />
         <option value="$PROJECT_DIR$/system/templates/pozycja_form.html" />
+        <option value="$PROJECT_DIR$/system/views.py" />
+        <option value="$PROJECT_DIR$/system/templates/szczegoly_faktury.html" />
+        <option value="$PROJECT_DIR$/system/models.py" />
       </list>
     </option>
   </component>
@@ -558,58 +542,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="4" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="14" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-12.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="47" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="31" selection-start="7014" selection-end="7014" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1173" selection-end="1173" vertical-scroll-proportion="-10.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="-10.666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="4" selection-start="798" selection-end="798" vertical-scroll-proportion="-9.416667">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,6 +583,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="4" selection-start="65" selection-end="65" vertical-scroll-proportion="0.13392857">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="14" selection-start="501" selection-end="501" vertical-scroll-proportion="0.7619048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="19" selection-start="563" selection-end="563" vertical-scroll-proportion="0.22619048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-13.791667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="5857" selection-end="5857" vertical-scroll-proportion="-4.225806">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="4" selection-start="1912" selection-end="1912" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="227" column="0" selection-start="10569" selection-end="10714" vertical-scroll-proportion="0.86455333">
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

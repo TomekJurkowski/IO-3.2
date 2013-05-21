@@ -115,27 +115,6 @@ class KsiegowanieFakturZakupuView(FormView):
         return context
 
 
-# class DodaniePozycjiFakturZakupuView(FormView):
-#     template_name = "pozycja_form.html"
-#     form_class = PozycjaFakturyForm
-#
-#     def form_valid(self, form):
-#         cd = form.cleaned_data
-#         print(cd)
-#         p = PozycjaFakturyZakupu(fakturaVAT=FakturaVATZakupu.objects.get(id=self.kwargs['id']),
-#                                  nazwa=cd['nazwa'], PKWiU=cd['PKWiU'], jednostkaMiary=cd['jednostkaMiary'],
-#                                  ilosc=cd['ilosc'], cena=cd['cena'], VAT=cd['VAT'])
-#         p.save()
-#         return HttpResponseRedirect(reverse('dodaniePozycjiFakturyZakupu', kwargs={'id':self.kwargs['id']}))
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(DodaniePozycjiFakturZakupuView, self).get_context_data()
-#         context['form'] = self.get_form(self.form_class)
-#         context['faktura'] = FakturaVATZakupu.objects.get(id=self.kwargs['id']).nrFaktury
-#         context['pozycje'] = PozycjaFakturyZakupu.objects.filter(fakturaVAT=FakturaVATZakupu.objects.get(id=self.kwargs['id']))
-#         return context
-
-
 class SzczegolyFakturyZakupu(DetailView):
     model = FakturaVATZakupu
     context_object_name = "f"
@@ -179,8 +158,6 @@ class KsiegaPRView(TemplateView):
             suma -= faktura.wartosc()
         context['suma'] = suma
         return context
-
-
 
 
 def register_page(request):
