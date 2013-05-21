@@ -40,7 +40,6 @@
                     {{ form.data_wystawienia }}
                 </div>
             </div>
-
             <div class="fieldWrapper">
                 {{ form.sprzedawca_nazwa.errors }}
                 <label for="id_sprzedawca_nazwa">Nazwa sprzedawcy:</label>
@@ -97,6 +96,9 @@
                 {{ form.nabywca_NIP.help_text }}
             </div>
 
+            {% block faktura_zakupu_content %}
+            {% endblock %}
+
             <div class="fieldWrapper">
                 {{ form.sposob_zaplaty.errors }}
                 <label for="id_sposob_zaplaty">Sposob zaplaty:</label>
@@ -126,8 +128,9 @@
                 {{ form.uwagi.help_text }}
             </div>
 
-            <input class="btn btn-danger" type="submit" value="Dodaj pozycje do faktury"/>
-            <input class="btn btn-danger" type="reset" value="Przywróć wartości domyślne"/>
+            {% block faktura_buttons_content %}
+            {% endblock %}
+
         </form>
     </fieldset>
 

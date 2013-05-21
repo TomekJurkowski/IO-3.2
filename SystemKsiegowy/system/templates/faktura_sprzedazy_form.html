@@ -9,8 +9,15 @@
 
 {% block faktura_content %}
 
-            <div class="fieldWrapper">
-                <h3 id="id_nr_faktury">Nr faktury: {{ faktura_nr }}</h3>
-            </div>
+    <div class="fieldWrapper">
+        <h3 id="id_nr_faktury">Nr faktury: {{ faktura_nr }}</h3>
+    </div>
+
+{% endblock %}
+
+{% block faktura_buttons_content %}
+
+    <input class="btn btn-danger" type="submit" value="Dodaj pozycje do faktury"/>
+    <input class="btn btn-danger" type="reset" value="Przywróć wartości domyślne"/>
 
 {% endblock %}

@@ -20,44 +20,46 @@
 
         {{ f.nrFaktury }}
     </h2>
+    <br>
 
-    <table class="table table-bordered table-stripped">
-        <thead>
-        <th>Nazwa pozycji:</th>
-        <th>PKWiU:</th>
-        <th>Jednostka miary:</th>
-        <th>Ilość:</th>
-        <th>Cena (zł):</th>
-        <th>Podatek VAT (%):</th>
-        </thead>
-        <tbody>
+    {% if rodzaj == 1 %}
+        <table class="table table-bordered table-stripped">
+            <thead>
+            <th>Nazwa pozycji:</th>
+            <th>PKWiU:</th>
+            <th>Jednostka miary:</th>
+            <th>Ilość:</th>
+            <th>Cena (zł):</th>
+            <th>Podatek VAT (%):</th>
+            </thead>
+            <tbody>
 
-            {% for p in pozycje %}
-                <tr>
-                    <td>
-                        {{ p.nazwa }}
-                    </td>
-                    <td>
-                        {{ p.PKWiU }}
-                    </td>
-                    <td>
-                        {{ p.ilosc }}
-                    </td>
-                    <td>
-                        {{ p.jednostkaMiary }}
-                    </td>
-                    <td>
-                        {{ p.cena }}
-                    </td>
-                    <td>
-                        {{ p.VAT }}
-                    </td>
-                </tr>
-            {% endfor %}
+                {% for p in pozycje %}
+                    <tr>
+                        <td>
+                            {{ p.nazwa }}
+                        </td>
+                        <td>
+                            {{ p.PKWiU }}
+                        </td>
+                        <td>
+                            {{ p.ilosc }}
+                        </td>
+                        <td>
+                            {{ p.jednostkaMiary }}
+                        </td>
+                        <td>
+                            {{ p.cena }}
+                        </td>
+                        <td>
+                            {{ p.VAT }}
+                        </td>
+                    </tr>
+                {% endfor %}
 
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    {% endif %}
 
 
     <div>

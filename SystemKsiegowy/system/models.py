@@ -179,6 +179,8 @@ class FakturaVATZakupu(models.Model):
     nabywca_kod = models.CharField(max_length=5)
     nabywca_NIP = models.CharField(max_length=10)
 
+    kwota = models.FloatField()
+    VAT = models.PositiveIntegerField()
     sposobZaplaty = models.CharField(max_length=25)
     terminZaplaty = models.DateField()
     bank = models.CharField(max_length=70)
@@ -216,6 +218,8 @@ class FakturaVATZakupu(models.Model):
         if not (self.nabywca_NIP.isdigit()) or (len(self.nabywca_NIP) != 5):
             raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
 
+        if self.kwota <= 0:
+            raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
 
     def wartosc(self):
         wartosc = 0
@@ -227,21 +231,21 @@ class FakturaVATZakupu(models.Model):
         return 'Faktura VAT zakupu nr %s' % self.nrFaktury
 
 
-class PozycjaFakturyZakupu(models.Model):
-    """
-    Pojedyncza pozycja faktury VAT Zakupu.
-    """
-    fakturaVAT = models.ForeignKey(FakturaVATZakupu)
-    nazwa = models.CharField(max_length=60)
-    PKWiU = models.CharField(max_length=20)
-    jednostkaMiary = models.CharField(max_length=15)
-    ilosc = models.PositiveIntegerField()
-    cena = models.FloatField()
-    VAT = models.PositiveIntegerField()
-
-    def clean_fields(self, exclude=None):
-        if self.cena <= 0:
-            raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
-
-    def __unicode__(self):
-        return 'Pozycja faktury VAT Zakupu o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)
+# class PozycjaFakturyZakupu(models.Model):
+#     """
+#     Pojedyncza pozycja faktury VAT Zakupu.
+#     """
+#     fakturaVAT = models.ForeignKey(FakturaVATZakupu)
+#     nazwa = models.CharField(max_length=60)
+#     PKWiU = models.CharField(max_length=20)
+#     jednostkaMiary = models.CharField(max_length=15)
+#     ilosc = models.PositiveIntegerField()
+#     cena = models.FloatField()
+#     VAT = models.PositiveIntegerField()
+#
+#     def clean_fields(self, exclude=None):
+#         if self.cena <= 0:
+#             raise ValidationError(u'Cena powinna byc wartoscia dodatnia.')
+#
+#     def __unicode__(self):
+#         return 'Pozycja faktury VAT Zakupu o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)

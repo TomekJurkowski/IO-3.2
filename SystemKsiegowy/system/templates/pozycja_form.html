@@ -1,5 +1,12 @@
 {% extends 'start_page.html' %}
 
+{% block additional_head %}
+    
+    {% load staticfiles %}
+    <link href="{% static "css/pozycja.css" %}" rel="stylesheet">
+
+{% endblock %}
+
 {% block content %}
 
 <h2>DODAJ POZYCJE DO FAKTURY</h2>
@@ -50,7 +57,7 @@
                 <tr>
                     <td>
                         <div class="fieldWrapper">
-                            <h4>{{ faktura }}</h4>
+                            <h4 id="id_nr_faktury">{{ faktura }}</h4>
                         </div>
                     </td>
                     <td>

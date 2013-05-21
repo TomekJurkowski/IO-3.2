@@ -137,6 +137,8 @@ class FakturaVATZakupuForm(forms.Form):
     nabywca_kod = forms.CharField(label='Kod pocztowy:', help_text='Kod pocztowy powinien byc ciagiem 5 cyfr', max_length=5)
     nabywca_NIP = forms.CharField(label='NIP nabywcy:', help_text='Nr NIP powinien byc ciagiem 10 cyfr', max_length=10)
 
+    kwota = forms.FloatField(label='kwota')
+    VAT = forms.IntegerField(label='VAT')
     sposob_zaplaty = forms.ChoiceField(label='Sposob zaplaty:', widget=forms.Select(), choices=SPOSOBY_PLATNOSCI)
     termin_zaplaty = forms.DateField(label='Termin zaplaty:', widget=DateInput)
     bank = forms.CharField(label='Bank:', max_length=70, required=False)
@@ -174,6 +176,13 @@ class FakturaVATZakupuForm(forms.Form):
         if nn:
             if len(nn) != 10:
                 self._errors['nabywca_NIP'] = self.error_class([u'Kod pocztowy powinien skladac sie z 10 cyfr.'])
+
+        k = cleaned_data.get("kwota", None)
+        v = cleaned_data.get("VAT", None)
+        if k <= 0:
+            self._errors['kwota'] = self.error_class([u'Kwota powinna byc wartoscia dodatnia.'])
+        if v <= 0 or v >= 100:
+            self._errors['VAT'] = self.error_class([u'Wartosc pola VAT powinna byc z zakresu (0, 100).'])
 
         sz = cleaned_data.get("sposob_zaplaty", None)
         b = cleaned_data.get("bank", None)
