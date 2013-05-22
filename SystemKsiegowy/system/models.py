@@ -1,6 +1,7 @@
 from datetime import date
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class BilansOtwarcia(models.Model):
@@ -9,6 +10,7 @@ class BilansOtwarcia(models.Model):
     Pasyw (dlugo- i krotkoterminowych).
     """
     # aktywaTrwale
+    user = models.ForeignKey(User)
     wartosciNiematerialneIPrawne = models.IntegerField(default=0)
     grunty = models.IntegerField(default=0)
     budynkiIBudowle = models.IntegerField(default=0)
@@ -41,41 +43,11 @@ class BilansOtwarcia(models.Model):
         return 'Bilans otwarcia o sumie aktyw = %d zl i sumie pasyw = %d zl.' % (self.getSumaAktyw(), self.getSumaPasyw())
 
 
-# class Osoba(models.Model):
-#     """
-#     Osoba reprezentuje osobe fizyczna (wtedy w miejscu nazwy pojawic powinno sie imie i nazwisko)
-#     lub osobe prawna (firme, przedsiebiorstwo, itp.).
-#     """
-#     nazwa = models.CharField(max_length=80)
-#     adres = models.CharField(max_length=100)
-#     miasto = models.CharField(max_length=50)
-#     kod = models.CharField(max_length=5)
-#     NIP = models.CharField(max_length=10)
-#
-#     def clean_fields(self, exclude=None):
-#         if self.nazwa == '' or self.nazwa == None:
-#             raise ValidationError(u'Podaj nazwe (imie i nazwisko w pzypadku osoby fizycznej).')
-#         if self.adres == '' or self.adres == None:
-#             raise ValidationError(u'Podaj adres.')
-#         if self.miasto == '' or self.miasto== None:
-#             raise ValidationError(u'Podaj miejscowosc.')
-#         if self.kod == '' or self.kod == None:
-#             raise ValidationError(u'Podaj kod pocztowy (5 cyfr).')
-#         if not (self.kod.isdigit()) or (len(self.kod) != 5):
-#             raise ValidationError(u'Kod Pocztowy powinien skladac sie z 5 cyfr.')
-#         if self.NIP == '' or self.NIP == None:
-#             raise ValidationError(u'Podaj NIP (10 cyfr).')
-#         if not (self.NIP.isdigit()) or (len(self.NIP) != 5):
-#             raise ValidationError(u'NIP powinien skladac sie z 10 cyfr.')
-#
-#     def __unicode__(self):
-#         return '%s' % self.nazwa
-
-
 class FakturaVATSprzedazy(models.Model):
     """
     Faktura VAT sprzedazy.
     """
+    user = models.ForeignKey(User)
     nrFaktury = models.CharField(max_length=15)
     dataSprzedazy = models.DateField()
     dataWystawienia = models.DateField()
@@ -163,6 +135,7 @@ class FakturaVATZakupu(models.Model):
     """
     Faktura VAT zakupu.
     """
+    user = models.ForeignKey(User)
     nrFaktury = models.CharField(max_length=40)
     dataSprzedazy = models.DateField()
     dataWystawienia = models.DateField()

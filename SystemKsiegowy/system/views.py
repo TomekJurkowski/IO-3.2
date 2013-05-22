@@ -53,7 +53,7 @@ class KsiegowanieFakturSprzedazyView(FormView):
     def form_valid(self, form):
         cd = form.cleaned_data
         print(cd)
-        f = FakturaVATSprzedazy(nrFaktury=getFakturaNr(), dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
+        f = FakturaVATSprzedazy(user=self.request.user, nrFaktury=getFakturaNr(), dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
                                 sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
                                 sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
                                 nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
@@ -98,7 +98,7 @@ class KsiegowanieFakturZakupuView(FormView):
     def form_valid(self, form):
         cd = form.cleaned_data
         print(cd)
-        f = FakturaVATZakupu(nrFaktury=cd['nr_faktury'], dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
+        f = FakturaVATZakupu(user=self.request.user, nrFaktury=cd['nr_faktury'], dataSprzedazy=cd['data_sprzedazy'], dataWystawienia=cd['data_wystawienia'],
                             sprzedawca_nazwa=cd['sprzedawca_nazwa'], sprzedawca_adres=cd['sprzedawca_adres'], sprzedawca_miasto=cd['sprzedawca_miasto'],
                             sprzedawca_kod=cd['sprzedawca_kod'], sprzedawca_NIP=cd['sprzedawca_NIP'],
                             nabywca_nazwa=cd['nabywca_nazwa'], nabywca_adres=cd['nabywca_adres'], nabywca_miasto=cd['nabywca_miasto'],
