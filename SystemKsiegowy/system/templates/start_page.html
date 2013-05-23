@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block main %}
+
     <div class="conteiner">
         <div class="row">
             <div class="span3 bs-docs-sidebar">
                     <div class="tabbable tabs-left">
                         <ul id="main_menu" class="nav nav-tabs bs-docs-sidenav affix">
+                            {% if user.is_authenticated %} 
                             <li>
                                 <a id="StartPage" href="/" data-toggle="tab">Strona startowa</a>
                             </li>
@@ -13,16 +15,26 @@
                                 <a id="Bilans" href="/bilans/" data-toggle="tab">Bilans otwarcia</a>
                             </li>
                             <li>
-                                <a id="KsiegowanieFaktur" href="/ksiegowanie/" data-toggle="tab">Księgowanie faktur</a>
+                                <a id="KsiegowanieFakturSprzedazy" href="/ksiegowanie_sprzedazy/" data-toggle="tab">Księgowanie faktur sprzedazy</a>
+                            </li>
+                            <li>
+                                <a id="KsiegowanieFakturZakupu" href="/ksiegowanie_zakupu/" data-toggle="tab">Księgowanie faktur zakupu</a>
                             </li>
                             <li>
                                 <a id="KsiegaPR" href="/ksiegaPR/" data-toggle="tab">Księga przychodów i rozchodów</a>
                             </li>
                             <li>
                                 <div class="btn btn-danger">
-                                    <a href="" data-toggle="tab">Wyloguj</a>
+                                    <a href="/logout/" data-toggle="tab">Wyloguj</a>
                                 </div>
                             </li>
+                            {% else %}
+                            <li>
+                                <!-- <div class="btn btn-primary"> -->
+                                    <a href="/login/" data-toggle="tab"><button class="btn btn-primary">Zaloguj się</button></a>
+                                <!-- </div> -->
+                            </li>
+                            {% endif %}
                         </ul>
                 </div>
             </div>

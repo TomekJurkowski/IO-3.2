@@ -1,0 +1,39 @@
+{% extends 'faktura_form.html' %}
+
+{% block faktura_content_title %}
+
+<h2>FORMULARZ FAKTURY ZAKUPU</h2>
+
+{% endblock %}
+
+{% block faktura_content %}
+
+    <div class="fieldWrapper">
+        {{ form.nr_faktury.errors }}
+        <label for="id_nr_faktury">Numer Faktury:</label>
+        {{ form.nr_faktury }}
+    </div>
+
+{% endblock %}
+
+{% block faktura_zakupu_content %}
+
+    <div class="fieldWrapper">
+        {{ form.kwota.errors }}
+        <label for="id_kwota">Kwota netto:</label>
+        {{ form.kwota}}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.VAT.errors }}
+        <label for="id_VAT">Podatek VAT:</label>
+        {{ form.VAT }}
+    </div>
+
+{% endblock %}
+
+{% block faktura_buttons_content %}
+
+    <input class="btn btn-danger" type="submit" value="Zaksięguj fakturę zakupu"/>
+    <input class="btn btn-danger" type="reset" value="Przywróć wartości domyślne"/>
+
+{% endblock %}

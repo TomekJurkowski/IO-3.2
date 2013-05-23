@@ -1,0 +1,124 @@
+{% extends 'start_page.html' %}
+
+{% block  additional_head %}
+
+    <script type="text/javascript">
+        $(function() {
+            $( '.button' ).click(function() {
+                window.location = "{% url 'StartPage' %}";
+            });
+        });
+    </script>
+
+{%  endblock additional_head %}
+{% block content %}
+
+    <h2>
+        {% if rodzaj == 0 %} Szczegóły faktury zakupu nr
+        {% elif rodzaj == 1 %} Szczegóły faktury sprzedazy nr
+        {% endif %}
+
+        {{ f.nrFaktury }}
+    </h2>
+    <br>
+
+    <table class="table table-bordered table-stripped">
+        <thead><th>Sprzedawca</th></thead>
+        <thead>
+        <th>Nazwa:</th>
+        <th>NIP:</th>
+        <th>Adres:</th>
+        <th>Miasto:</th>
+        <th>Kod pocztowy:</th>
+        </thead>
+        <tr>
+            <td>{{ f.sprzedawca_nazwa }}</td>
+            <td>{{ f.sprzedawca_NIP }}</td>
+            <td>{{ f.sprzedawca_adres }}</td>
+            <td>{{ f.sprzedawca_miasto }}</td>
+            <td>{{ f.sprzedawca_kod }}</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-stripped">
+        <thead><th>Nabywca</th></thead>
+        <thead>
+        <th>Nazwa:</th>
+        <th>NIP:</th>
+        <th>Adres:</th>
+        <th>Miasto:</th>
+        <th>Kod pocztowy:</th>
+        </thead>
+        <tr>
+            <td>{{ f.nabywca_nazwa }}</td>
+            <td>{{ f.nabywca_NIP }}</td>
+            <td>{{ f.nabywca_adres }}</td>
+            <td>{{ f.nabywca_miasto }}</td>
+            <td>{{ f.nabywca_kod }}</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-stripped">
+        <thead><th>Pozostałe dane:</th></thead>
+        <thead>
+        <th>Data wystawienia:</th>
+        <th>Data sprzedaży:</th>
+        <th>Termin zapłaty:</th>
+        {% if rodzaj == 0 %}
+            <th>Kwota netto (zł):</th>
+            <th>Podatek VAT (%):</th>
+        {% endif %}
+        </thead>
+        <tr>
+            <td>{{ f.dataWystawienia }}</td>
+            <td>{{ f.dataSprzedazy }}</td>
+            <td>{{ f.terminZaplaty }}</td>
+            {% if rodzaj == 0 %}
+                <td>{{ f.kwota }}</td>
+                <td>{{ f.VAT }}</td>
+            {% endif %}
+        </tr>
+    </table>
+
+    {% if rodzaj == 1 %}
+        <table class="table table-bordered table-stripped">
+            <thead>
+            <th>Nazwa pozycji:</th>
+            <th>PKWiU:</th>
+            <th>Jednostka miary:</th>
+            <th>Ilość:</th>
+            <th>Cena netto (zł):</th>
+            <th>Podatek VAT (%):</th>
+            </thead>
+
+            {% for p in pozycje %}
+                <tr>
+                    <td>
+                        {{ p.nazwa }}
+                    </td>
+                    <td>
+                        {{ p.PKWiU }}
+                    </td>
+                    <td>
+                        {{ p.jednostkaMiary }}
+                    </td>
+                    <td>
+                        {{ p.ilosc }}
+                    </td>
+                    <td>
+                        {{ p.cena }}
+                    </td>
+                    <td>
+                        {{ p.VAT }}
+                    </td>
+                </tr>
+        {% endfor %}
+
+        </table>
+    {% endif %}
+
+
+
+    <div>
+        <button class="btn btn-danger button">Wróć do Księgi Przychodów i Rozchdów</button>
+    </div>
+
+{% endblock %}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% block main %}
     <div class="" id="loginModal">
@@ -14,3 +15,41 @@
     </div>
     </div>
 {% endblock main %}
+=======
+<!Doctype html>
+<html>
+<head>
+
+    {% load staticfiles %}
+    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap-responsive.css" %}" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+{#    <script src="{% static "js/bootstrap.js" %}"></script>#}
+    {# dodanie tego skryptu powoduje blad #}
+    {# Uncaught TypeError: undefined is not a function #}
+
+    <script>
+        /* set active menu element after site load */
+        $(function () {
+            console.log("fasada");
+            $('#main_menu').children().children().each(function (nr, el) {
+                console.log($(this).attr('id'));
+                console.log("{{ view }}");
+               if ("{{ view }}".indexOf($(this).attr('id')) > 0) {
+                   $(this).parent().addClass('active')
+               }
+            })
+        })
+    </script>
+    {% block  additional_head %}
+    {%  endblock additional_head %}
+</head>
+<body>
+<div class="">
+{% block content %}
+{% endblock content %}
+</div>
+</body>
+</html>
+>>>>>>> 31a6ed2f4af48f7334bf66bd71ef98c11c508244

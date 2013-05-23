@@ -1,0 +1,30 @@
+{% extends 'start_page.html' %}
+
+{% block content %}
+
+<table class="table table-hover table-striped">
+<tr>
+    <th>Numer FVAT</th> <th>Kontrahent</th> <th>Wartość</th>
+</tr>
+<tr class="info"><td colspan="2">Bilans Otwarcia</td><td>0.00</td></tr>
+<tr class="info"><td colspan="3">Sprzedaż</td></tr>
+{% for faktura in sprzedaz %}
+<tr>
+  <td>{{ faktura.nrFaktury }}</td>
+  <td>{{ faktura.nabywca_nazwa  }}</td>
+  <td>{{ faktura.wartosc|floatformat:2 }} </td>
+</tr>
+{% endfor %}
+<tr class="info"><td colspan="3">Zakupy</td></tr>
+{% for faktura in zakup %}
+<tr>
+  <td>{{ faktura.nrFaktury }}</td>
+  <td>{{ faktura.sprzedawca_nazwa  }}</td>
+  <td>-{{ faktura.wartosc|floatformat:2 }} </td>
+</tr>
+{% endfor %}
+<tr class="info"><td colspan="2">Suma</td><td>{{ suma }}</tr>
+
+
+</table>
+{% endblock content %}
