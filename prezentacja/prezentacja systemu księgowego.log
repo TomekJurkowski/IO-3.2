@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.21)  23 MAY 2013 23:37
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.21)  23 MAY 2013 23:25
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.21)  23 MAY 2013 23:23
+>>>>>>> 61dc06039b0ae4e2efdff8584d9acffdc2b255cf
+>>>>>>> ccea65cbde4b5e477b697ed8a61f8e3c62ef80f8
 entering extended mode
 **prezentacja*systemu*księgowego.tex
 ("F:\Dropbox\studia\io\IO-3.2\prezentacja\prezentacja systemu księgowego.tex"
@@ -1378,6 +1386,7 @@ Package rerunfilecheck Info: File `prezentacja*systemu*księgowego.out' has not
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  18092 strings out of 493921
  330052 string characters out of 3144882
  401851 words of memory out of 3000000
@@ -1394,6 +1403,39 @@ Output written on "prezentacja systemu księgowego.pdf" (29 pages, 313629 bytes
 ).
 PDF statistics:
  1071 PDF objects out of 1200 (max. 8388607)
+=======
+<<<<<<< HEAD
+ 18172 strings out of 493921
+ 331750 string characters out of 3144882
+ 401851 words of memory out of 3000000
+ 20926 multiletter control sequences out of 15000+200000
+=======
+ 18166 strings out of 493921
+ 331551 string characters out of 3144882
+ 401851 words of memory out of 3000000
+ 20920 multiletter control sequences out of 15000+200000
+>>>>>>> 61dc06039b0ae4e2efdff8584d9acffdc2b255cf
+ 40126 words of font info for 44 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 49i,19n,62p,498b,684s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/lm/lmss10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/lm/lmss12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/l
+mss8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb>
+<<<<<<< HEAD
+Output written on "prezentacja systemu księgowego.pdf" (29 pages, 318157 bytes
+).
+PDF statistics:
+ 1076 PDF objects out of 1200 (max. 8388607)
+=======
+Output written on "prezentacja systemu księgowego.pdf" (29 pages, 317386 bytes
+).
+PDF statistics:
+ 1074 PDF objects out of 1200 (max. 8388607)
+>>>>>>> 61dc06039b0ae4e2efdff8584d9acffdc2b255cf
+>>>>>>> ccea65cbde4b5e477b697ed8a61f8e3c62ef80f8
  70 named destinations out of 1000 (max. 500000)
  179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
