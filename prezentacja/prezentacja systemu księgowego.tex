@@ -1,0 +1,254 @@
+\RequirePackage{atbegshi}
+\documentclass{beamer}
+
+\usepackage [MeX]{polski}
+\usepackage [utf8] {inputenc}
+
+\usecolortheme[named=blue]{structure}
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{items}[ball]
+  \setbeamertemplate{theorems}[numbered]
+  \setbeamertemplate{footline}[frame number]
+}
+
+\usepackage{beamerthemesplit}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{listings}
+  \lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{verbatim}
+
+%\renewcommand*\rmdefault{ppl}
+\usepackage{lmodern}
+
+\title
+  [Księgowość]
+  {Prezentacja systemu księgowego}
+\author[grupa 3, podgrupa 2]{Jakub Kuszneruk, Tomasz Jurkowski, Piotr Ostrowski}
+\institute[Uniwersytet Warszawski]{
+Wydział Matematyki Informatyki i Mechaniki}
+\date[2013]{Biała Podlaska, 28.05.2013}
+\subject{Computational Sciences}
+
+\pgfdeclaremask{fsu}{fsu_logo}
+\pgfdeclareimage[mask=fsu,width=1cm]{fsu-logo}{fsu_logo}
+
+\begin{document}
+%-----------------------------------------------------------------------------80
+  \begin{frame}{}
+    \titlepage
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\section{Wstęp}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \tableofcontents
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\section{e-księgowość}
+
+  \begin{frame}{charakterystyka}
+    \begin{block}{}
+      Jest to system dedykowany ludziom prowadzącym indywidualną działalność gospodarczą jak i większym firmom, wspierający działanie księgowości.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}{charakterystyka}
+    \begin{block}{}
+      Głównym zadaniem naszego systemu jest optymalizacja procesów finansowych przedsiębiorstwa, do której zaliczymy ułatiwenie pracy księgowości oraz skrócenie czasu pracy potrzebnego na przeprowadzenie tychże procesów.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}{charakterystyka}
+    \begin{block}{}
+      Niezwykle ważnym aspektem "e-księgowości" jest fakt, iż jest to aplikacja "webowa" - nie wymagająca instalacji aplikacji na naszym komputerze.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\section{Funkcjonalności}
+
+  \begin{frame}
+    \begin{block}{}
+      Na kolejnych slajdach znajdą się główne funkcjonalności dostarczane przez nasz produkt wraz z ich krótki opisem. Funkcjonalności są przedstawione w kolejności występowania w kolejnych iteracjach.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{1. iteracja}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Podstawowe zarządzanie użytkownikami Pod tym hasłem kryje się umożliwienie rejestracji nowego użytkownika oraz logowania, bez którego użytkownik nie ma dostępu do pozostałych funkcjonalności systemu.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Księgowanie faktur sprzedaży: Aplikacja daje możliwość zaksięgowania faktury sprzedaży. Dodatkowo wprowadza automatyczne generowanie numeru faktury (numer ten wygląda tak: <data wprowadzenia faktury do systemu>/<liczba faktur wprowadzonych tego dnia>)
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Bilans otwarcia: Nasza aplikacja umozliwia wprowadzenie uproszczonego bilansu otwarcia, koniecznego do poprawnego funkcjonowania każdej działalności gospodarczej.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Księga Przychodów i Rozchodów: Uproszczona księga Przychodów i Rozchodów zawiera listę zaksięgowanych faktur sprzedaży i zakupu oraz pozycję "bilans otwarcia". Ponadto, widoczne jest podsumowanie przychodów i wydatków (rozchodów) firmy.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Księga Przychodów i Rozchodów - cdn.: Z poziomu "księgi PR" udostępniony jest dostęp do szczegółowego widoku dowolnej faktury.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{2. iteracja}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Rozliczenie ZUS dla "idn": W drugiej iteracji pojawia się możliwość rozliczenia się z ZUS dla przedsiębiorców prowadzących indywidualną działalność gospodarczą.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      VAT7: "e-księgowość" daje możliwość wypełnienia deklaracji dla podatku od towarów i usług - VAT7.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      PIT-36L: Kolejną funkcjonalnością jest możliwość wypełnienia zeznania o wysokości osiągniętego dochodu (poniesionej straty) w roku podatkowym - PIT-36L.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Podstawowe wsparcie dla "e-Deklaracji": Pojawia się możliwość wysłania formularzy VAT7 oraz PIT-36L poprzez system "e-Deklaracje".
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Ewidencja VAT: Kolejną funkcjonalnością wprowadzoną w drugiej iteracji naszego systemu jest możliwość prowadzenia ewidencji VAT.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{3. iteracja}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Funkcjonalności z kolejnych dwóch iteracji przedstawimy skrótowo: * integracja z kontem bankowym - tzw. "pełna księgowość" * rozliczenia ZUS dla pracowników * przetrzymywanie informacji o zatrudnionych pracownikach
+    \end{block}
+  \end{frame}
+\subsection{4. iteracja}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{itemize}
+      \item zarządzanie użytkownikami - rozwinięcie 1. iteracji
+      \item zarządzanie uprawnieniami użytkowników
+      \item system płatności za nasz produkt
+    \end{itemize}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\section{Technologia}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Tutaj  o skalowalności.
+      [TODO]
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\section{Napotkane Problemy}
+\subsection{Problemy koncepcyjne}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Głównym problemem jaki stanął na naszej drodze to ...
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Głównym problemem jaki stanął na naszej drodze to nieznajomość niezwykle obszernej i trudnej dla laika dziedziny jaką jest prowadzenie księgowości.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Jak można było przypuszczać, praktycznie "zerowe" doświadczenie naszego zespołu w prowadzeniu księgowości przysporzyło nam sporo problemów, które zaczęły się już w najwcześniejszych fazach (tworzenie diagramów m.in. przypadków użycia) i ciągną się do dnia dzisiejszego, czyli do fazy implementacji.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Co zatem zrobiliśmy z tym problemem? Niestety nie udało nam się znaleźć jakiegoś genialnego tutoriala pt. "jak przyswoić wiedzę o księgowości w 24h", a także nie było nas stać na wynajęcie konsultanta.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Nie pozostało nam zatem nic innego jak przebijanie się przez wikipedię, analizę podobnych systemów dostępnych na rynku oraz atakowanie pytaniami Grześka:)
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{problemy w implementacji}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Kolejnym problemem technicznym, na który się natknęliśmy to jak umożliwić użytkownikowi wygodne dodawanie faktur zakupu.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Precyzyjniej, problem sprowadza się do wypełnienia kilkunastu pól formularza faktury (np. nazwa sprzedawcy, data wystawienia itd.), a następnie dodanie za pomocą kolejnego formularza pozycji do tejże faktury, z czego liczba pozycji powinna być większa od zera i jednocześnie nieograniczona z góry.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      W przypadku, gdy chcemy dodać więcej pozycji niż jest na to miejsce w formularzu powinna być możliwość dostawienia kolejnej pozycji.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Rozwiązanie jakie zastosowaliśmy polega na podzieleniu tworzenia faktury zakupu na dwa etapy: w pierwszym widoku użytkownik dostaje do uzupełnienia wszelkie pola faktury poza pozycjami i następnie może się przenieść do drugiego widoku, umożliwiającego dostawienie pozycji do faktury. W drugim widoku pojawia się klawisz "Dodaj kolejną pozycję" dostawiający pola dla dodatkowej pozycji i klawisz "Zaksięguj fakturę" - bez komentarza.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{}
+      Alternatywnym rozwiązaniem wartym rozważenia, ale wymagającym nieco większej znajomości technologii jest zastosowanie mechanizmu formset-ów udostępnianego przez Django. W skrócie umożliwia on dodawanie więcej niż jednego formularza do pojedynczego widoku. Po szczegóły odsyłamy do dokumentacji.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+
+\end{document}
