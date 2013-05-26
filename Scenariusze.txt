@@ -1,0 +1,100 @@
+Scenariusz 1 - Rejestracja z logowaniem i wylogowaniem:
+1.  Jeśli masz już konto kliknij w zakładkę 'Login' (o ile nie jest już
+wybrana), uzupełnij pola 'Username', 'Password' i kliknij w przycisk
+'Logowanie' - następnie przejdź do pkt. 4 tego scenariusza. Jeśli zaś nie masz
+jeszcze konta przejdź do pkt. 2.
+2.  Klikamy w zakładkę 'Create Account'.
+3.  Wypełniamy dane nowego użytkownika (przykładowo Login: xxxx, Email:
+xxxx@gmail.com, Haslo: xxxx, Powtórz haslo: xxxx), zaznaczamy checkbox
+oznaczony opisem 'Logowanie po rejestracji' i klikamy w przycisk 'Rejestracja'.
+4.  Znajdujesz się na głównej stronie aplikacji. Po lewej stronie masz pasek
+'Menu' oferujący różne opcje, które zostaną opisane w kolejnych scenariuszach.
+5.  Aby się wylogować kliknij w jedyny klawisz w pasku 'Menu' oznaczony
+etykietą 'Wyloguj'.
+
+
+Scenariusz 2 - Dodanie faktury sprzedaży:
+1.  Zgodnie z scenariuszem 1 zaloguj się do aplikacji.
+2.  W menu po lewej stronie kliknij w zakładkę 'Ksiegowanie faktur sprzedazy'.
+3.  Wyświetli się formularz faktury sprzedaży. Zauważ, że twoja faktura jest
+automatycznie numerowana. Numer składa się z dwóch części oddzielonych znakiem
+'/'. Pierwsza część to data dzisiejsza. Druga zaś to liczba faktur sprzedaży,
+które dzisiejszego dnia zaksięgowałeś do tej pory. Zakładając że jest to Twoja
+pierwsza faktura, po ukośniku powinna widnieć liczba '0'.
+4.  Uzupełnij pola faktury. Koło niektórych pól widnieją podpowiedzi, co w nich
+powinno się znaleźć. Ponadto, jeśli wprowadzone przez Ciebie dane nie będą
+poprawne, po próbie kliknięcia w klawisz 'Dodaj pozycje do faktury' obok
+błędnego pola wyświetli się dodatkowa informacja co jest źle.
+5.  Jeśli zdecydujesz, że większość wprowadzonych przez Ciebie pól jest błędna
+i chcesz je wprowadzić od początku, nie kasuj ich ręcznie, kliknij w klawisz
+'Przywróć wartości domyślne'.
+6.  Wprowadźmy przykładowe dane:
+    Data sprzedazy: <dzień dzisiejszy>
+    Data wystawienia: <dzień dzisiejszy>
+    Nazwa sprzedawcy: Jan Kowalski
+    Adres sprzedawcy: ul. Sokola 12
+    Miasto sprzedawcy: Warszawa
+    Kod pocztowy: 00383
+    NIP sprzedawcy: 1234512345
+    Nazwa nabywcy: Tadeusz Nowak
+    Adres nabywcy: ul. Barania 123/3
+    Miasto nabywcy: Warszawa
+    Kod pocztowy: 00382
+    NIP nabywcy: 6789067890
+    Sposób zaplaty:<wybierz 'przelew', wtedy pola 'Bank' i 'Numer konta'
+                    również będzie trzeba uzupełnić>
+    Termin zaplaty: <dzień dzisiejszy>
+    Bank: Multibank
+    Numer konta: 0000000000000000
+    Uwagi: <cokolwiek>
+7.  Kliknij 'Dodaj pozycje do faktury'.
+8.  Uzupełnij pola przykładowymi danymi (kolejno wprowadź 'Cukier', 'cuki',
+'kg', '6', '3', '7')
+9.  Aby zaksięgować fakturę kliknij w 'Zaksięguj'. Jeśli zaś chcesz dodać
+kolejną pozycję, kliknij 'Dodaj kolejną pozycję' i uzupełnij kolejną pozycję.
+Przycisk 'Przywróć wartości domyślne' pozostawiam bez komentarza.
+10. Po zaksięgowaniu znajdziesz się spowroten na stronie głównej aplikacji.
+
+Scenariusz 3 - Dodanie faktury zakupu:
+1.  Zgodnie z scenariuszem 1 zaloguj się do aplikacji.
+2.  W menu po lewej stronie kliknij w zakładkę 'Ksiegowanie faktur zakupu'.
+3.  Uzupełnij pola faktury. Koło niektórych pól widnieją podpowiedzi, co w nich
+powinno się znaleźć. Ponadto, jeśli wprowadzone przez Ciebie dane nie będą
+poprawne, po próbie kliknięcia w klawisz 'Dodaj pozycje do faktury' obok
+błędnego pola wyświetli się dodatkowa informacja co jest źle.
+4.  Jeśli zdecydujesz, że większość wprowadzonych przez Ciebie pól jest błędna
+i chcesz je wprowadzić od początku, nie kasuj ich ręcznie, kliknij w klawisz
+'Przywróć wartości domyślne'.
+5.  Wprowadźmy przykładowe dane:
+    Numer faktury: 2013-432
+    Data sprzedazy: <dzień dzisiejszy>
+    Data wystawienia: <dzień dzisiejszy>
+    Nazwa sprzedawcy: Tadeusz Nowak
+    Adres sprzedawcy: ul. Barania 123/3
+    Miasto sprzedawcy: Warszawa
+    Kod pocztowy: 00382
+    NIP sprzedawcy: 6789067890
+    Nazwa nabywcy: Jan Kowalski
+    Adres nabywcy: ul. Sokola 12
+    Miasto nabywcy: Warszawa
+    Kod pocztowy: 00383
+    NIP nabywcy: 1234512345
+    Kwota netto: 40
+    Podate VAT: 23
+    Sposób zaplaty:<wybierz 'gotowka', wtedy pola 'Bank' i 'Numer konta'
+                    należy pominąć>
+    Termin zaplaty: <dzień dzisiejszy>
+    Uwagi: <cokolwiek>
+6.  Kliknij W 'Zaksięguj fakturę zakupu', aby zatwierdzić wprowadzone dane i
+zaksięgować fakturę.
+7.  Po zaksięgowaniu znajdziesz się spowroten na stronie głównej aplikacji.
+
+
+Scenariusz 4 - Księga przychodów i rozchodów:
+1.  Zgodnie z scenariuszem 1 zaloguj się do aplikacji.
+2.  W menu po lewej stronie kliknij w zakładkę 'Księga przychodów i rozchodów'.
+3.  Wyświtla się uproszczona Księga przychodów i rozchodów. Dzieli się na 3
+główne części: Bilans Otwarcia, Sprzedaż (w niej widoczne są zaksięgowane
+faktury spzedaży) i Zakupy(w niej widoczne są zaksięgowane faktury zakupu). Na
+dole wyliczona jest suma obrotów.
+4.  Aby obejrzeć szczegóły poszczególnych faktur kliknij w Numer danej faktury.
