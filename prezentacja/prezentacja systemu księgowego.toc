@@ -8,6 +8,9 @@
 \beamer@subsectionintoc {3}{3}{3. iteracja}{17}{0}{3}
 \beamer@subsectionintoc {3}{4}{4. iteracja}{18}{0}{3}
 \beamer@sectionintoc {4}{Technologia}{19}{0}{4}
-\beamer@sectionintoc {5}{Napotkane Problemy}{20}{0}{5}
-\beamer@subsectionintoc {5}{1}{Problemy koncepcyjne}{20}{0}{5}
-\beamer@subsectionintoc {5}{2}{problemy w implementacji}{25}{0}{5}
+\beamer@subsectionintoc {4}{1}{Techonologie sieciowe}{19}{0}{4}
+\beamer@subsectionintoc {4}{2}{Technologie web desig}{21}{0}{4}
+\beamer@subsectionintoc {4}{3}{Sklalowalno\IeC {\'s}\IeC {\'c}}{24}{0}{4}
+\beamer@sectionintoc {5}{Napotkane Problemy}{27}{0}{5}
+\beamer@subsectionintoc {5}{1}{Problemy koncepcyjne}{27}{0}{5}
+\beamer@subsectionintoc {5}{2}{problemy w implementacji}{32}{0}{5}

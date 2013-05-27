@@ -183,11 +183,79 @@ Wydział Matematyki Informatyki i Mechaniki}
   \end{frame}
 %-----------------------------------------------------------------------------80
 \section{Technologia}
+\subsection{Techonologie sieciowe}
 %-----------------------------------------------------------------------------80
   \begin{frame}
-    \begin{block}{}
-      Tutaj  o skalowalności.
-      [TODO]
+    \begin{block}{haproxy}
+      Nasłuchuj żądania http na porcie 80.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{haproxy}
+      Ma zdefiniowany klaster serwerów apache/lighttpd/nginx obsługujących naszą aplikację.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{Technologie web desig}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{Django}
+      Podstawowa technologia CMS:
+      \begin{itemize}
+        \item generowanie html
+        \item szybkie tworzenie działającej aplikacji
+        \item automatyczna obsługa sesji
+      \end{itemize}
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{Twitter Bootstrap}
+      Zestaw zdefiniowanych klas css i js umożliwiający szybkie tworzenie efektownych stron internetowych.
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{jQuery}
+      lekka biblioteka programistyczna dla języka JavaScript, ułatwiająca manipulację drzewem DOM:
+      \begin{itemize}
+        \item modyfikacja elementów drzewa
+        \item dodwanie/usuwanie elementów
+        \item tworzenie efektownych animacji
+      \end{itemize}
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+\subsection{Sklalowalność}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{Frontend:}
+      \begin{itemize}
+        \item haproxy nasłuchuje na porcie 80, jedyna publicznie dostępna maszyna
+        \item opcjonalnie używa varnisha/filtruje ruch
+        \item rozbija ruch na N (u nas N=2) maszyn o nazwach app[1..N]
+      \end{itemize}
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{App[1..N]}
+      \begin{itemize}
+        \item nasłuchują na wybranym porcie połączeń od haproxy
+        \item na każdej z nich chodzi identyczne Django
+        \item połączenia DB (SQLlite) idą do kolejnych maszyn DB[1..N]
+      \end{itemize}
+    \end{block}
+  \end{frame}
+%-----------------------------------------------------------------------------80
+  \begin{frame}
+    \begin{block}{DB[1..N]}
+      \begin{itemize}
+        \item obsługa db
+        \item pojedyncza baza (SQLlite)
+        \item możliwość replikacji z 2. bazą (loadbalncing pomiędzy bazami)
+      \end{itemize}
     \end{block}
   \end{frame}
 %-----------------------------------------------------------------------------80
