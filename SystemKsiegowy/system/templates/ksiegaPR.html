@@ -10,7 +10,7 @@
 <tr class="info"><td colspan="3">Sprzedaż</td></tr>
 {% for faktura in sprzedaz %}
 <tr>
-  <td>{{ faktura.nrFaktury }}</td>
+  <td><a href="{% url "szczegolyFakturySprzedazy" faktura.id %}">{{ faktura.nrFaktury }}</a></td>
   <td>{{ faktura.nabywca_nazwa  }}</td>
   <td>{{ faktura.wartosc|floatformat:2 }} </td>
 </tr>
@@ -18,7 +18,7 @@
 <tr class="info"><td colspan="3">Zakupy</td></tr>
 {% for faktura in zakup %}
 <tr>
-  <td><a href="/faktura_zakupu/"{{ faktura.nrFaktury }}>{{ faktura.nrFaktury }}</a></td>
+  <td><a href="{% url "szczegolyFakturyZakupu" faktura.id %}">{{ faktura.nrFaktury }}</a></td>
   <td>{{ faktura.sprzedawca_nazwa  }}</td>
   <td>-{{ faktura.wartosc|floatformat:2 }} </td>
 </tr>
