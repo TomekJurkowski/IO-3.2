@@ -195,3 +195,7 @@ def logout_page(request):
     print ("logout")
     logout(request)
     return HttpResponseRedirect(reverse('login'))
+
+
+class EDeklaracjeView(TemplateView):
+    template_name = "edeklaracje.html"

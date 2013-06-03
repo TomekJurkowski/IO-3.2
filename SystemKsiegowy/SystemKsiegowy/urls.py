@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from system.views import StartPageView, BilansView, KsiegowanieFakturSprzedazyView, KsiegowanieFakturZakupuView,    \
     KsiegaPRView, DodaniePozycjiFakturSprzedazyView, register_page, logout_page,    \
-    SzczegolyFakturyZakupu, SzczegolyFakturySprzedazy
+    SzczegolyFakturyZakupu, SzczegolyFakturySprzedazy, EDeklaracjeView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -17,6 +17,8 @@ urlpatterns = patterns('',
                        url(r'^faktura_sprzedazy/(?P<pk>\d+)/$', SzczegolyFakturySprzedazy.as_view(), name='szczegolyFakturySprzedazy'),
                        url(r'^faktura_zakupu/(?P<pk>\d+)/$', SzczegolyFakturyZakupu.as_view(), name='szczegolyFakturyZakupu'),
                        url(r'^ksiegaPR/$', KsiegaPRView.as_view(), name='ksiegaPR'),
+
+                       url(r'^edeklaracje/$', EDeklaracjeView.as_view(), name='EDeklaracje'),
 
                        url(r'^accounts/login/$','django.contrib.auth.views.login', name='login'),
                        url(r'^accounts/logout/$', logout_page, name='logout'),
