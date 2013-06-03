@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="732f3d48-0a68-464b-be2d-e4e9c40086e0" name="Default" comment="" />
+    <list default="true" id="732f3d48-0a68-464b-be2d-e4e9c40086e0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/templates/ewidencjaVAT_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baza_IO" afterPath="$PROJECT_DIR$/baza_IO" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SystemKsiegowy.iml" afterPath="$PROJECT_DIR$/.idea/SystemKsiegowy.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/forms.py" afterPath="$PROJECT_DIR$/system/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/models.py" afterPath="$PROJECT_DIR$/system/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/templates/start_page.html" afterPath="$PROJECT_DIR$/system/templates/start_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SystemKsiegowy/urls.py" afterPath="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/views.py" afterPath="$PROJECT_DIR$/system/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SystemKsiegowy.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370266006294" ignored="false" />
-    <file path="/views.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370265822087" ignored="false" />
-    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369211409900" ignored="false" />
-    <file path="/forms.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369159214490" ignored="false" />
+    <file path="/urls.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370292231621" ignored="false" />
+    <file path="/views.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370293543555" ignored="false" />
+    <file path="/models.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370291824182" ignored="false" />
+    <file path="/forms.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370292841587" ignored="false" />
     <file path="/faktura_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369160899234" ignored="false" />
     <file path="/bilans_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1367865126147" ignored="false" />
     <file path="/pozycja_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369165016251" ignored="false" />
     <file path="/settings.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368705802131" ignored="false" />
     <file path="/a.dummy" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368705821983" ignored="false" />
-    <file path="/start_page.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370265745367" ignored="false" />
+    <file path="/start_page.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370292390330" ignored="false" />
     <file path="/faktura_zakupu_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369165643933" ignored="false" />
     <file path="/faktura_sprzedazy_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368725189049" ignored="false" />
     <file path="$USER_HOME$/Dropbox/AplikacjeWWW/eDesk/eDesk/settings.py" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1368775409599" ignored="false" />
@@ -28,6 +40,8 @@
     <file path="/base.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1369589751191" ignored="false" />
     <file path="/ksiegaPR.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370266169972" ignored="false" />
     <file path="/edeklaracje.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370274041003" ignored="false" />
+    <file path="/Dummy.txt" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370290290904" ignored="false" />
+    <file path="/ewidencjaVAT_form.html" changelist="732f3d48-0a68-464b-be2d-e4e9c40086e0" time="1370292732957" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,46 +63,68 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="szczegoly_faktury.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="322" selection-end="507" vertical-scroll-proportion="-6.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start_page.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/start_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="59" selection-start="1547" selection-end="1569" vertical-scroll-proportion="-9.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="19" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.0">
+            <state line="213" column="31" selection-start="9820" selection-end="9820" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pozycja_form.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/pozycja_form.html">
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="76" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
+            <state line="177" column="41" selection-start="9392" selection-end="9392" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ewidencjaVAT_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/templates/ewidencjaVAT_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="38" selection-start="718" selection-end="718" vertical-scroll-proportion="-2.3076923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/templates/registration/login.html">
+      <file leaf-file-name="faktura_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="58" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+            <state line="31" column="45" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-20.26923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="faktura_sprzedazy_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding>
+                <marker date="1369343180306" expanded="true" signature="187:263" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="6" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-20.307692">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logged_base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/templates/logged_base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -97,7 +133,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="42" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
+            <state line="21" column="39" selection-start="1538" selection-end="1538" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -105,12 +141,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edeklaracje.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/system/templates/edeklaracje.html">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="30" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.44272447">
+            <state line="120" column="20" selection-start="5659" selection-end="5659" vertical-scroll-proportion="0.6165803">
               <folding>
-                <element signature="e#2268#2294#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,33 +159,41 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/system/forms.py" />
-        <option value="$PROJECT_DIR$/system/templates/faktura_form.html" />
         <option value="$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/main.css" />
         <option value="$PROJECT_DIR$/SystemKsiegowy/static/css/pozycja.css" />
         <option value="$PROJECT_DIR$/system/templates/faktura_zakupu_form.html" />
-        <option value="$PROJECT_DIR$/system/models.py" />
         <option value="$PROJECT_DIR$/system/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/system/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/system/templates/pozycja_form.html" />
         <option value="$PROJECT_DIR$/system/templates/szczegoly_faktury.html" />
-        <option value="$PROJECT_DIR$/system/templates/start_page.html" />
-        <option value="$PROJECT_DIR$/system/views.py" />
-        <option value="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
         <option value="$PROJECT_DIR$/system/templates/ksiegaPR.html" />
         <option value="$PROJECT_DIR$/system/templates/edeklaracje.html" />
+        <option value="$PROJECT_DIR$/system/models.py" />
+        <option value="$PROJECT_DIR$/SystemKsiegowy/urls.py" />
+        <option value="$PROJECT_DIR$/system/templates/start_page.html" />
+        <option value="$PROJECT_DIR$/system/templates/ewidencjaVAT_form.html" />
+        <option value="$PROJECT_DIR$/system/forms.py" />
+        <option value="$PROJECT_DIR$/system/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="24" />
-    <option name="width" value="1307" />
-    <option name="height" value="744" />
+    <option name="x" value="-283" />
+    <option name="y" value="-1088" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -311,13 +355,24 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="b553f473-367b-4bac-ad01-61f3eae51924">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -326,6 +381,11 @@
     <option name="myDjangoConsoleState">
       <PyConsoleSettings />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Dropbox\studia\io\IO-3.2\SystemKsiegowy\system\templates" />
+    </key>
   </component>
   <component name="RunManager" selected="Django server.SystemKsiegowy">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -341,27 +401,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="SystemKsiegowy" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -383,6 +422,27 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="SystemKsiegowy" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -421,6 +481,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="SystemKsiegowy.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -435,6 +496,8 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <list size="1">
@@ -469,23 +532,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="24" width="1307" height="744" extended-state="6" />
+    <frame x="-283" y="-1088" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293556" sideWeight="0.6726094" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.6726094" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178762" sideWeight="0.6737194" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3273906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32628062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -545,76 +608,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/system/views.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="3000" selection-end="3000" vertical-scroll-proportion="0.90163934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/faktura_zakupu_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="474" selection-end="474" vertical-scroll-proportion="0.33630952" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="58" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/registration/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="34" selection-start="430" selection-end="430" vertical-scroll-proportion="6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/registration/register_success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="112" selection-end="112" vertical-scroll-proportion="0.13392857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/pozycja_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="76" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="7" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.91071427">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="17" selection-start="8516" selection-end="8516" vertical-scroll-proportion="0.8101266">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="42" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/templates/szczegoly_faktury.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="322" selection-end="507" vertical-scroll-proportion="-6.5">
+        <state line="22" column="0" selection-start="322" selection-end="507" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -622,13 +628,6 @@
     <entry file="file://$PROJECT_DIR$/system/templates/ksiegaPR.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="53" selection-end="92" vertical-scroll-proportion="0.17857143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="19" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -647,18 +646,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/start_page.html">
+    <entry file="file://$PROJECT_DIR$/system/templates/edeklaracje.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="59" selection-start="1547" selection-end="1569" vertical-scroll-proportion="-9.375">
+        <state line="46" column="25" selection-start="1843" selection-end="1843" vertical-scroll-proportion="-16.846153">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/templates/edeklaracje.html">
+    <entry file="file://$PROJECT_DIR$/system/templates/logged_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="30" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.44272447">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/start_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="104" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.81374323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="213" column="31" selection-start="9820" selection-end="9820" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/ewidencjaVAT_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="38" selection-start="718" selection-end="718" vertical-scroll-proportion="-2.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="45" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-20.26923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/faktura_sprzedazy_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#2268#2294#0" expanded="true" />
+            <marker date="1369343180306" expanded="true" signature="187:263" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="6" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-20.307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SystemKsiegowy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="39" selection-start="1538" selection-end="1538" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="41" selection-start="9392" selection-end="9392" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/shlNewEnv/Lib/site-packages/django/core/urlresolvers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="20" selection-start="5659" selection-end="5659" vertical-scroll-proportion="0.6165803">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

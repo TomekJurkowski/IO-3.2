@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, include, url
 from system.views import StartPageView, BilansView, KsiegowanieFakturSprzedazyView, KsiegowanieFakturZakupuView,    \
     KsiegaPRView, DodaniePozycjiFakturSprzedazyView, register_page, logout_page,    \
-    SzczegolyFakturyZakupu, SzczegolyFakturySprzedazy, EDeklaracjeView
-
+    SzczegolyFakturyZakupu, SzczegolyFakturySprzedazy, EDeklaracjeView, EwidencjaVATView
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -19,6 +18,8 @@ urlpatterns = patterns('',
                        url(r'^ksiegaPR/$', KsiegaPRView.as_view(), name='ksiegaPR'),
 
                        url(r'^edeklaracje/$', EDeklaracjeView.as_view(), name='EDeklaracje'),
+
+                       url(r'^ewidencjaVAT/$', EwidencjaVATView.as_view(), name='EwidencjaVAT'),
 
                        url(r'^accounts/login/$','django.contrib.auth.views.login', name='login'),
                        url(r'^accounts/logout/$', logout_page, name='logout'),

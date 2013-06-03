@@ -220,3 +220,25 @@ class FakturaVATZakupu(models.Model):
 #
 #     def __unicode__(self):
 #         return 'Pozycja faktury VAT Zakupu o numerze %s. Nazwa pozycji: %s ' % (self.fakturaVAT.nrFaktury, self.nazwa)
+
+
+
+
+
+class EwidencjaVAT(models.Model):
+    """
+    Ewidencja VAT.
+    """
+    user = models.ForeignKey(User)
+    nrFaktury = models.CharField(max_length=40)
+
+    przedmiot = models.CharField(max_length=200)
+    #podmiot opodatkowania
+    wysokosc_podatku_naleznego = models.FloatField()
+    #wysokość podatku należnego
+    kwoty_podatku_obnizajace = models.FloatField()
+    #kwoty podatku naliczonego obniżające kwotę podatku należnego
+    kwota_podlegajaca_wplacie = models.FloatField()
+    #kwotę podatku podlegająca wpłacie do urzędu skarbowego lub zwrotowi z tego urzędu
+    kwoty_przy_czesciawnym_odliczaniu = models.FloatField()
+    #kwoty podatku naliczonego przy częściowym odliczeniu podatku VAT

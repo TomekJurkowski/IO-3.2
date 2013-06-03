@@ -1,0 +1,45 @@
+{% extends 'start_page.html' %}
+
+{% block  additional_head %}
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}datepicker/css/datepicker.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#id_data_sprzedazy').datepicker({}).data('datepicker');
+            $('#id_data_wystawienia').datepicker({}).data('datepicker');
+            $('#id_termin_zaplaty').datepicker({}).data('datepicker');
+        });
+    </script>
+
+{%  endblock additional_head %}
+{% block content %}
+
+    <h2>EWIDENCJA VAT</h2>
+
+    <fieldset>
+        <form method="post" action=".">
+            {% csrf_token %}
+
+
+            <!--
+    <div class="fieldWrapper">
+        {{ form.nr_faktury.errors }}
+        <label for="id_nr_faktury">Numer Faktury:</label>
+        {{ form.nr_faktury }}
+    </div>
+    -->
+
+            {{ form }}
+
+            <div>
+    <input class="btn btn-danger" type="submit" value="Zatwierdź ewidencję"/>
+    <input class="btn btn-danger" type="reset" value="Przywróć wartości domyślne"/>
+
+</div>
+
+        </form>
+    </fieldset>
+
+{% endblock %}

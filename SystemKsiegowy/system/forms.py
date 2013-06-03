@@ -204,6 +204,27 @@ class FakturaVATZakupuForm(forms.Form):
         return cleaned_data
 
 
+
+class EwidencjaVATForm(forms.Form):
+
+    nr_faktury = forms.CharField(label='Numer faktury:', max_length=40)
+    przedmiot = forms.CharField(label='Przedmiot opodatkowania:')
+    wysokosc_podatku_naleznego = forms.FloatField(label='wysokość podatku należnego:')
+    kwoty_podatku_obnizajace = forms.FloatField(label='kwoty podatku naliczonego obniżające kwotę podatku należnego')
+    kwota_podlegajaca_wplacie = forms.FloatField(label='kwotę podatku podlegającą wpłacie do urzędu skarbowego lub zwrotowi z tego urzędu')
+    kwoty_przy_czesciawnym_odliczaniu = forms.FloatField(label='kwoty podatku naliczonego przy częściowym odliczeniu podatku VAT')
+
+    def clean(self):
+        cleaned_data = super(EwidencjaVATForm, self).clean()
+
+        przedmiot = cleaned_data.get("przedmiot", None)
+
+        if False:
+                self._errors['nr_faktury'] = self.error_class([u'fasada'])
+
+
+        return cleaned_data
+
 class RegisterForm(forms.Form):
     username = forms.CharField(label="Login:",max_length=30)
     email = forms.EmailField(label="Email:")

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.core.management.commands import startproject
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
@@ -9,7 +10,7 @@ from django.views.generic import TemplateView, FormView, DetailView
 import time
 from datetime import date
 
-from system.forms import BilansOtwarciaForm, FakturaVATSprzedazyForm, PozycjaFakturyForm, FakturaVATZakupuForm, RegisterForm
+from system.forms import BilansOtwarciaForm, FakturaVATSprzedazyForm, PozycjaFakturyForm, FakturaVATZakupuForm, RegisterForm, EwidencjaVATForm
 from system.models import BilansOtwarcia, FakturaVATSprzedazy, FakturaVATZakupu, PozycjaFakturySprzedazy
 
 
@@ -113,6 +114,12 @@ class KsiegowanieFakturZakupuView(FormView):
         context = super(KsiegowanieFakturZakupuView, self).get_context_data()
         context['form'] = self.get_form(self.form_class)
         return context
+
+class EwidencjaVATView(FormView):
+    template_name = "ewidencjaVAT_form.html"
+    form_class = EwidencjaVATForm
+    success_url = "/"
+
 
 
 class SzczegolyFakturyZakupu(DetailView):
